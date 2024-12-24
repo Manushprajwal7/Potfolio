@@ -18,7 +18,7 @@ const projects = [
     title: "Student Voice",
     description:
       "A (SaaS) platform for students to voice their opinions and concerns at Colleges and Universities.",
-    image: "/placeholder.svg",
+    image: "/sv_card.jpg",
     category: "web",
     github: "https://github.com/Manushprajwal7/student-voice",
     live: "#",
@@ -27,7 +27,7 @@ const projects = [
     title: "Bike Brains",
     description:
       "A (SaaS) platform where people can find jobs and share their issues regarding their bikes and cars.",
-    image: "/placeholder.svg",
+    image: "/bb_card.jpg",
     category: "web",
     github: "https://github.com/Manushprajwal7/BikeBrains",
     live: "#",
@@ -36,7 +36,7 @@ const projects = [
     title: "Intrusion Detection System",
     description:
       "A web-based project focusing on detecting and preventing unauthorized access using advanced technical methodologies.",
-    image: "/placeholder.svg",
+    image: "/ids_card.webp",
     category: "web",
     github:
       "https://github.com/Manushprajwal7/Advanced-intrusion-detection-system",
@@ -46,7 +46,7 @@ const projects = [
     title: "Safe Step",
     description:
       "A (SaaS) health-focused platform designed to promote foot health through innovative monitoring and recommendations.",
-    image: "/placeholder.svg",
+    image: "/ss_card.png",
     category: "mobile",
     github: "#",
     live: "#",
@@ -75,7 +75,7 @@ export function Projects() {
             Here are some of my featured projects that showcase my skills and
             experience.
           </p>
-          <div className="flex justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
             <Button
               variant={filter === "all" ? "default" : "outline"}
               onClick={() => setFilter("all")}
@@ -108,20 +108,21 @@ export function Projects() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="relative h-48 w-full mb-4">
+                <Card className="flex flex-col h-full hover:shadow-lg transition-shadow">
+                  <CardHeader className="flex-1 p-6">
+                    <div className="aspect-video relative w-full mb-4 overflow-hidden rounded-lg">
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
-                        className="object-cover rounded-lg"
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
-                    <CardTitle>{project.title}</CardTitle>
+                    <CardTitle className="mb-2">{project.title}</CardTitle>
                     <CardDescription>{project.description}</CardDescription>
                   </CardHeader>
-                  <CardFooter className="flex justify-end gap-4">
+                  <CardFooter className="flex justify-end gap-4 p-6 pt-0">
                     <Button variant="outline" size="icon" asChild>
                       <a
                         href={project.github}
@@ -150,3 +151,5 @@ export function Projects() {
     </section>
   );
 }
+
+export default Projects;

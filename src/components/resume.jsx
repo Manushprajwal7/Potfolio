@@ -51,7 +51,7 @@ export function Resume() {
           {/* Download Resume Button */}
           <Button className="bg-blue-600 hover:bg-blue-700">
             <a
-              href="/resume.pdf" // Ensure resume.pdf is in the public folder
+              href="/Resume.pdf" // Ensure resume.pdf is in the public folder
               download="My_Resume.pdf" // Custom file name for downloaded file
               className="flex items-center text-white"
             >
