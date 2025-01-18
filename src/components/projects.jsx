@@ -15,6 +15,56 @@ import Image from "next/image";
 
 const projects = [
   {
+    title: "Student Hub",
+    description:
+      "A college community website where students can raise issues, share resources, announce events, share scholarships, and list jobs.",
+    image: "/student-hub.jpg",
+    category: "web",
+    github: "https://github.com/Manushprajwal7/student-hub",
+    live: "#",
+    tools: "Next.js, Firebase, Tailwind CSS",
+  },
+  {
+    title: "Accessible Travel Destinations",
+    description:
+      "A website for disabled people to check destination accessibility.",
+    image: "/travel.jpg",
+    category: "web",
+    github: "https://github.com/Manushprajwal7/accessible-travel",
+    live: "#",
+    tools: "React, Express.js, MongoDB",
+  },
+  {
+    title: "Trip Expenses Tracker",
+    description:
+      "A website for students to manage and efficiently share and track trip expenses.",
+    image: "/expenses.jpg",
+    category: "web",
+    github: "https://github.com/Manushprajwal7/trip-expenses",
+    live: "#",
+    tools: "React, Node.js, PostgreSQL",
+  },
+  {
+    title: "Fit Connect",
+    description:
+      "A fitness community where people can share fitness-related content and workouts.",
+    image: "/fit-connect.jpg",
+    category: "web",
+    github: "https://github.com/Manushprajwal7/fit-connect",
+    live: "#",
+    tools: "Next.js, Firebase, Tailwind CSS",
+  },
+  {
+    title: "The Hawk Fit Hub",
+    description:
+      "A freelance webpage for a gym focused on fitness services and community.",
+    image: "/hawk-fit.jpg",
+    category: "web",
+    github: "https://github.com/Manushprajwal7/hawk-fit",
+    live: "#",
+    tools: "Next.js, Firebase, Tailwind CSS",
+  },
+  {
     title: "Student Voice",
     description:
       "A (SaaS) platform for students to voice their opinions and concerns at Colleges and Universities.",
@@ -121,6 +171,11 @@ export function Projects() {
                     </div>
                     <CardTitle className="mb-2">{project.title}</CardTitle>
                     <CardDescription>{project.description}</CardDescription>
+                    {project.tools && (
+                      <p className="text-sm text-muted-foreground mt-2">
+                        Tools: {project.tools}
+                      </p>
+                    )}
                   </CardHeader>
                   <CardFooter className="flex justify-end gap-4 p-6 pt-0">
                     <Button variant="outline" size="icon" asChild>
