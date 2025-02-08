@@ -18,60 +18,51 @@ const projects = [
     title: "Student Hub",
     description:
       "A college community website where students can raise issues, share resources, announce events, share scholarships, and list jobs.",
-    image: "/student-hub.jpg",
+    image: "/studenthub.png",
     category: "web",
     github: "https://github.com/Manushprajwal7/student-hub",
-    live: "#",
+    live: "student-hub-mp.vercel.app",
     tools: "Next.js, Firebase, Tailwind CSS",
   },
   {
     title: "Accessible Travel Destinations",
     description:
       "A website for disabled people to check destination accessibility.",
-    image: "/travel.jpg",
+    image: "/accesstravel.png",
     category: "web",
     github: "https://github.com/Manushprajwal7/accessible-travel",
-    live: "#",
+    live: "https://accessdestinations.netlify.app",
     tools: "React, Express.js, MongoDB",
   },
   {
     title: "Trip Expenses Tracker",
     description:
       "A website for students to manage and efficiently share and track trip expenses.",
-    image: "/expenses.jpg",
+    image: "/tripexpenses.png",
     category: "web",
     github: "https://github.com/Manushprajwal7/trip-expenses",
-    live: "#",
+    live: "https://tripbudgettracker.vercel.app",
     tools: "React, Node.js, PostgreSQL",
   },
-  {
-    title: "Fit Connect",
-    description:
-      "A fitness community where people can share fitness-related content and workouts.",
-    image: "/fit-connect.jpg",
-    category: "web",
-    github: "https://github.com/Manushprajwal7/fit-connect",
-    live: "#",
-    tools: "Next.js, Firebase, Tailwind CSS",
-  },
+
   {
     title: "The Hawk Fit Hub",
     description:
       "A freelance webpage for a gym focused on fitness services and community.",
-    image: "/hawk-fit.jpg",
+    image: "/hawkfit.png",
     category: "web",
     github: "https://github.com/Manushprajwal7/hawk-fit",
-    live: "#",
+    live: "https://hawkfithub-bor2robnz-manushprajwals-projects.vercel.app/",
     tools: "Next.js, Firebase, Tailwind CSS",
   },
   {
     title: "Student Voice",
     description:
       "A (SaaS) platform for students to voice their opinions and concerns at Colleges and Universities.",
-    image: "/sv_card.jpg",
+    image: "/studentvoice.png",
     category: "web",
     github: "https://github.com/Manushprajwal7/student-voice",
-    live: "#",
+    live: "student-voice-mp.vercel.app",
   },
   {
     title: "Bike Brains",

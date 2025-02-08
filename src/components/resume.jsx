@@ -17,11 +17,11 @@ const education = [
 
 const experience = [
   {
-    position: "Web Development Intern",
-    company: "Tech Company Name",
+    position: "Freelance Web Developer",
+
     year: "2022 - 2023",
     description:
-      "Developed and maintained web applications using React and Next.js. Collaborated with senior developers on various projects.",
+      "Developed and maintained web applications using React and Next.js.",
   },
 ];
 
@@ -51,7 +51,7 @@ export function Resume() {
           {/* Download Resume Button */}
           <Button className="bg-blue-600 hover:bg-blue-700">
             <a
-              href="/updated_Resume.pdf" // Ensure resume.pdf is in the public folder
+              href="/manush_resume.pdf"
               download="updated_Resume.pdf" // Custom file name for downloaded file
               className="flex items-center text-white"
             >
