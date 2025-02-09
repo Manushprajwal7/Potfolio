@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
@@ -24,7 +24,7 @@ export function Footer() {
               <Github className="h-6 w-6" />
             </a>
             <a
-              href="https://linkedin.com/in/manushprajwal"
+              href="https://www.linkedin.com/in/manush-prajwal-16a883294/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/60 hover:text-foreground transition-colors"
@@ -32,12 +32,20 @@ export function Footer() {
               <Linkedin className="h-6 w-6" />
             </a>
             <a
-              href="https://twitter.com/manushprajwal"
+              href="https://twitter.com/_manushprajwal"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/60 hover:text-foreground transition-colors"
             >
               <Twitter className="h-6 w-6" />
+            </a>
+            <a
+              href="https://www.instagram.com/manushprajwal._"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground/60 hover:text-foreground transition-colors"
+            >
+              <Instagram className="h-6 w-6" />
             </a>
           </div>
           <p className="text-center text-sm text-foreground/60">
