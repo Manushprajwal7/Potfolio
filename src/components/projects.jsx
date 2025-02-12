@@ -89,7 +89,7 @@ const projects = [
       "A (SaaS) health-focused platform designed to promote foot health through innovative monitoring and recommendations.",
     image: "/ss_card.png",
     category: "mobile",
-    github: "#",
+    github: "https://github.com/Manushprajwal7/safestep",
     live: "#",
   },
 ];
