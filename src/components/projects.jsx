@@ -21,7 +21,7 @@ const projects = [
     image: "/studenthub.png",
     category: "web",
     github: "https://github.com/Manushprajwal7/student-hub",
-    live: "student-hub-mp.vercel.app",
+    live: "https://student-hub-mp.vercel.app/",
     tools: "Next.js, Firebase, Tailwind CSS",
   },
   {
@@ -52,7 +52,7 @@ const projects = [
     image: "/hawkfit.png",
     category: "web",
     github: "https://github.com/Manushprajwal7/hawk-fit",
-    live: "https://hawkfithub-bor2robnz-manushprajwals-projects.vercel.app/",
+    live: "https://thehawkfithub.vercel.app/",
     tools: "Next.js, Firebase, Tailwind CSS",
   },
   {
@@ -62,7 +62,7 @@ const projects = [
     image: "/studentvoice.png",
     category: "web",
     github: "https://github.com/Manushprajwal7/student-voice",
-    live: "student-voice-mp.vercel.app",
+    live: "https://student-voice-mp.vercel.app",
   },
   {
     title: "Bike Brains",
