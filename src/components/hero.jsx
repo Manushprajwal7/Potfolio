@@ -50,6 +50,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
+              className="mb-8 md:mb-0"
             >
               <Link href="#projects">
                 <Button
@@ -61,19 +62,24 @@ export function Hero() {
               </Link>
             </motion.div>
           </motion.div>
+
+          {/* Improved Image Container */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative h-[400px] w-full"
+            className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] mx-auto max-w-md lg:max-w-full"
           >
-            <Image
-              src="/profile_image.jpg"
-              alt="Manush Prajwal"
-              fill
-              className="object-cover rounded-2xl"
-              priority
-            />
+            <div className="absolute inset-0 overflow-hidden rounded-xl shadow-xl">
+              <Image
+                src="/profile_image.jpg"
+                alt="Manush Prajwal"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </div>
           </motion.div>
         </div>
       </div>
