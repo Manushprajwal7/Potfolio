@@ -41,7 +41,7 @@ const projects = [
     image: "/tripexpenses.png",
     category: "web",
     github: "https://github.com/Manushprajwal7/V2-trip-expenses-tracker",
-    live: "https://tripbudgettracker.vercel.app",
+    live: "https://trip-expens-tracker.vercel.app/",
     tools: "React, Node.js, PostgreSQL",
   },
 
