@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🧑‍💻 Personal Portfolio – [Manush Prajwal]
 
-## Getting Started
+Welcome to the source code of my **Personal Portfolio Website** built with **Next.js**!  
+This portfolio showcases my projects, skills, experiences, and more.
 
-First, run the development server:
+🌐 [Live Site →](https://manushpotfolio.vercel.app/)
+
+---
+
+## 🖼️ Overview
+
+This is a modern, responsive, and fully customizable portfolio website that serves as my digital identity. It includes:
+
+- 👋 About Me section
+- 💼 Projects and case studies
+- 🧠 Skills and technologies
+- 📄 Resume/CV download
+- 📫 Contact form and social links
+- 🌓 Dark & Light mode support (optional)
+
+---
+
+## 🧰 Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Styling:** Tailwind CSS / CSS Modules
+- **Hosting:** [Vercel](https://vercel.com/)
+- **Forms:** EmailJS or a form backend service (if used)
+
+---
+
+## 🚀 Getting Started
+
+To run this project locally, follow these steps:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Manushprajwal7/Potfolio
+cd portfolio
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Configure Environment Variables
+
+If you use environment variables (e.g., for forms or analytics), create a `.env.local` file:
+
+```env
+NEXT_PUBLIC_EMAILJS_USER_ID=your_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template
+```
+
+### 4. Run the Development Server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Folder Structure
 
-## Learn More
+```bash
+.
+├── components/         # Reusable UI components
+├── pages/              # Next.js pages
+├── public/             # Static assets
+├── styles/             # Global styles
+├── utils/              # Utility functions
+├── .env.local          # Environment variables
+└── README.md
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+You can easily update the content and styles by editing the respective components and config files. Personalize sections like:
 
-## Deploy on Vercel
+- `about.js`
+- `projects.js`
+- `contact.js`
+- `head.js` (SEO and meta tags)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Contributing
+
+While this is a personal project, feel free to fork and use it as a base for your own portfolio!
+
+1. Fork the repository
+2. Make your changes
+3. Submit a pull request (optional)
+
+---
+
+
+
+## 📬 Connect with Me
+
+You can reach me through:
+
+- 🌐 [yourwebsite.com](https://manushpotfolio.vercel.app/)
+- 📧 manushprajwal1@gmail.com
+- 🐦 Twitter: [@yourhandle](https://x.com/_manushprajwal/highlights)
+- 💼 LinkedIn: [Your Name](https://www.linkedin.com/in/manush-prajwal-16a883294/)
+
+---
+
+### 🌟 Crafted with Next.js and a passion for clean design.
