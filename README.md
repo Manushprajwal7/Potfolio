@@ -1,4 +1,4 @@
-# 🧑‍💻 Personal Portfolio – [Manush Prajwal]
+# 🧑‍💻 Personal Portfolio – Manush Prajwal
 
 Welcome to the source code of my **Personal Portfolio Website** built with **Next.js**!  
 This portfolio showcases my projects, skills, experiences, and more.
