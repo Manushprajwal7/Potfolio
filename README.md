@@ -111,10 +111,10 @@ While this is a personal project, feel free to fork and use it as a base for you
 
 You can reach me through:
 
-- 🌐 [yourwebsite.com](https://manushpotfolio.vercel.app/)
+- 🌐 (https://manushpotfolio.vercel.app/)
 - 📧 manushprajwal1@gmail.com
-- 🐦 Twitter: [@yourhandle](https://x.com/_manushprajwal/highlights)
-- 💼 LinkedIn: [Your Name](https://www.linkedin.com/in/manush-prajwal-16a883294/)
+- 🐦 Twitter: (https://x.com/_manushprajwal/highlights)
+- 💼 LinkedIn: (https://www.linkedin.com/in/manush-prajwal-16a883294/)
 
 ---
 
