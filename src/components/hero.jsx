@@ -52,12 +52,16 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="mb-8 md:mb-0"
             >
-              <Link href="#projects">
+              <Link
+                href="/MP_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   size="lg"
                   className="bg-blue-600 hover:bg-blue-700 text-white"
                 >
-                  View My Work
+                  📄 View My Resume
                 </Button>
               </Link>
             </motion.div>
