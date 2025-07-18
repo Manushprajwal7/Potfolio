@@ -83,15 +83,6 @@ const projects = [
       "https://github.com/Manushprajwal7/Advanced-intrusion-detection-system",
     live: "#",
   },
-  {
-    title: "Safe Step",
-    description:
-      "A (SaaS) health-focused platform designed to promote foot health through innovative monitoring and recommendations.",
-    image: "/ss_card.png",
-    category: "mobile",
-    github: "https://github.com/Manushprajwal7/safestep",
-    live: "#",
-  },
 ];
 
 export function Projects() {
