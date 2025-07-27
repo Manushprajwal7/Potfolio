@@ -51,7 +51,7 @@ export function Resume() {
           {/* Download Resume Button */}
           <Button className="bg-blue-600 hover:bg-blue-700">
             <a
-              href="/manush_resume.pdf"
+              href="/MP_Resume.pdf"
               download="MP_Resume.pdf" // Custom file name for downloaded file
               className="flex items-center text-white"
             >
