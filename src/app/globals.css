@@ -68,5 +68,11 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+
+  /* Scroll offset for fixed navigation */
+  html {
+    scroll-padding-top: 80px;
   }
 }

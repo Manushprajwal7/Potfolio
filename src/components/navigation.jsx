@@ -15,7 +15,7 @@ export function Navigation() {
   useEffect(() => setMounted(true), []);
 
   const menuItems = [
-    { href: "/", label: "Home" },
+    { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
     { href: "#resume", label: "Resume" },
@@ -42,18 +42,6 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            >
-              {mounted &&
-                (theme === "dark" ? (
-                  <Sun className="h-5 w-5" />
-                ) : (
-                  <Moon className="h-5 w-5" />
-                ))}
-            </Button>
           </div>
 
           {/* Mobile Navigation */}
@@ -93,18 +81,6 @@ export function Navigation() {
                     {item.label}
                   </Link>
                 ))}
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                >
-                  {mounted &&
-                    (theme === "dark" ? (
-                      <Sun className="h-5 w-5" />
-                    ) : (
-                      <Moon className="h-5 w-5" />
-                    ))}
-                </Button>
               </div>
             </div>
           </motion.div>

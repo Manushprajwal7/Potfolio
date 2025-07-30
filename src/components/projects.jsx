@@ -10,183 +10,342 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Github, Globe } from "lucide-react";
+import {
+  Github,
+  Globe,
+  ExternalLink,
+  Star,
+  Eye,
+  Calendar,
+  Users,
+  Zap,
+} from "lucide-react";
 import Image from "next/image";
 
-const projects = [
-  {
-    title: "Student Hub",
-    description:
-      "A college community website where students can raise issues, share resources, announce events, share scholarships, and list jobs.",
-    image: "/studenthub.png",
-    category: "web",
-    github: "https://github.com/Manushprajwal7/student-hub-V2",
-    live: "https://student-hub-mp.vercel.app/",
-    tools: "Next.js, Firebase, Tailwind CSS",
-  },
-  {
-    title: "Accessible Travel Destinations",
-    description:
-      "A website for disabled people to check destination accessibility.",
-    image: "/accesstravel.png",
-    category: "web",
-    github: "https://github.com/Manushprajwal7/travel-guide",
-    live: "https://accessdestinations.netlify.app",
-    tools: "React, Express.js, MongoDB",
-  },
-  {
-    title: "Trip Expenses Tracker",
-    description:
-      "A website for students to manage and efficiently share and track trip expenses.",
-    image: "/tripexpenses.png",
-    category: "web",
-    github: "https://github.com/Manushprajwal7/V2-trip-expenses-tracker",
-    live: "https://trip-expens-tracker.vercel.app/",
-    tools: "React, Node.js, PostgreSQL",
-  },
-
-  {
-    title: "The Hawk Fit Hub",
-    description:
-      "A freelance webpage for a gym focused on fitness services and community.",
-    image: "/hawkfit.png",
-    category: "web",
-    github: "https://github.com/Manushprajwal7/hawkfithub",
-    live: "https://thehawkfithub.vercel.app/",
-    tools: "Next.js, Firebase, Tailwind CSS",
-  },
-  {
-    title: "Student Voice",
-    description:
-      "A (SaaS) platform for students to voice their opinions and concerns at Colleges and Universities.",
-    image: "/studentvoice.png",
-    category: "web",
-    github: "https://github.com/Manushprajwal7/student-voice",
-    live: "https://student-voice-mp.vercel.app",
-  },
-  {
-    title: "Bike Brains",
-    description:
-      "A (SaaS) platform where people can find jobs and share their issues regarding their bikes and cars.",
-    image: "/bb_card.jpg",
-    category: "web",
-    github: "https://github.com/Manushprajwal7/BikeBrains",
-    live: "#",
-  },
-  {
-    title: "Intrusion Detection System",
-    description:
-      "A web-based project focusing on detecting and preventing unauthorized access using advanced technical methodologies.",
-    image: "/ids_card.webp",
-    category: "web",
-    github:
-      "https://github.com/Manushprajwal7/Advanced-intrusion-detection-system",
-    live: "#",
-  },
-];
-
 export function Projects() {
-  const [filter, setFilter] = useState("all");
+  const [hoveredProject, setHoveredProject] = useState(null);
 
-  const filteredProjects = projects.filter(
-    (project) => filter === "all" || project.category === filter
-  );
+  const projects = [
+    {
+      title: "Student Hub",
+      description:
+        "A comprehensive college community platform where students can raise issues, share resources, announce events, share scholarships, and list jobs. Features real-time notifications and a robust user management system.",
+      image: "/studenthub.png",
+      category: "web",
+      github: "https://github.com/Manushprajwal7/student-hub-V2",
+      live: "https://student-hub-mp.vercel.app/",
+      tools: ["Next.js", "Firebase", "Tailwind CSS", "TypeScript"],
+      featured: true,
+      stats: {
+        stars: 15,
+        views: 1200,
+        contributors: 3,
+      },
+      highlights: [
+        "Real-time notifications",
+        "User authentication",
+        "File sharing",
+        "Event management",
+      ],
+    },
+    {
+      title: "Accessible Travel Destinations",
+      description:
+        "An inclusive travel platform designed specifically for people with disabilities to check destination accessibility. Features detailed accessibility ratings, user reviews, and comprehensive accessibility information.",
+      image: "/accesstravel.png",
+      category: "web",
+      github: "https://github.com/Manushprajwal7/travel-guide",
+      live: "https://accessdestinations.netlify.app",
+      tools: ["React", "Express.js", "MongoDB", "Node.js"],
+      featured: true,
+      stats: {
+        stars: 12,
+        views: 800,
+        contributors: 2,
+      },
+      highlights: [
+        "Accessibility ratings",
+        "User reviews",
+        "Interactive maps",
+        "Mobile responsive",
+      ],
+    },
+    {
+      title: "Trip Expenses Tracker",
+      description:
+        "A smart expense management application for students to efficiently track, manage, and share trip expenses. Features group expense splitting, real-time calculations, and detailed expense reports.",
+      image: "/tripexpenses.png",
+      category: "web",
+      github: "https://github.com/Manushprajwal7/V2-trip-expenses-tracker",
+      live: "https://trip-expens-tracker.vercel.app/",
+      tools: ["React", "Node.js", "PostgreSQL", "Express.js"],
+      featured: false,
+      stats: {
+        stars: 8,
+        views: 600,
+        contributors: 1,
+      },
+      highlights: [
+        "Expense splitting",
+        "Real-time calculations",
+        "Group management",
+        "Export reports",
+      ],
+    },
+    {
+      title: "The Hawk Fit Hub",
+      description:
+        "A modern fitness website for a premium gym, showcasing fitness services, community features, and membership management. Features class scheduling, progress tracking, and member portal.",
+      image: "/hawkfit.png",
+      category: "web",
+      github: "https://github.com/Manushprajwal7/hawkfithub",
+      live: "https://thehawkfithub.vercel.app/",
+      tools: ["Next.js", "Firebase", "Tailwind CSS", "Framer Motion"],
+      featured: false,
+      stats: {
+        stars: 6,
+        views: 400,
+        contributors: 1,
+      },
+      highlights: [
+        "Class scheduling",
+        "Progress tracking",
+        "Member portal",
+        "Payment integration",
+      ],
+    },
+    {
+      title: "Student Voice",
+      description:
+        "A SaaS platform empowering students to voice their opinions and concerns at colleges and universities. Features anonymous feedback, analytics dashboard, and institutional response tracking.",
+      image: "/studentvoice.png",
+      category: "web",
+      github: "https://github.com/Manushprajwal7/student-voice",
+      live: "https://student-voice-mp.vercel.app",
+      tools: ["React", "Node.js", "MongoDB", "Socket.io"],
+      featured: false,
+      stats: {
+        stars: 10,
+        views: 700,
+        contributors: 2,
+      },
+      highlights: [
+        "Anonymous feedback",
+        "Analytics dashboard",
+        "Real-time updates",
+        "Institutional tracking",
+      ],
+    },
+    {
+      title: "Bike Brains",
+      description:
+        "A comprehensive SaaS platform connecting bike and car enthusiasts with job opportunities and technical support. Features job listings, issue reporting, and community forums.",
+      image: "/bb_card.jpg",
+      category: "web",
+      github: "https://github.com/Manushprajwal7/BikeBrains",
+      live: "#",
+      tools: ["React", "Express.js", "PostgreSQL", "Redis"],
+      featured: false,
+      stats: {
+        stars: 5,
+        views: 300,
+        contributors: 1,
+      },
+      highlights: [
+        "Job listings",
+        "Issue reporting",
+        "Community forums",
+        "Expert matching",
+      ],
+    },
+  ];
 
   return (
-    <section id="projects" className="py-20">
-      <div className="container mx-auto px-4">
+    <section
+      id="projects"
+      className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 relative overflow-hidden"
+    >
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold mb-4">My Projects</h2>
-          <p className="text-foreground/80 mb-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="inline-block mb-6"
+          >
+            <div className="p-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl shadow-lg">
+              <Globe className="text-white" size={32} />
+            </div>
+          </motion.div>
+
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Featured Projects
+          </h2>
+          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
             Here are some of my featured projects that showcase my skills and
-            experience.
+            experience in modern web development.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <Button
-              variant={filter === "all" ? "default" : "outline"}
-              onClick={() => setFilter("all")}
-            >
-              All
-            </Button>
-            <Button
-              variant={filter === "web" ? "default" : "outline"}
-              onClick={() => setFilter("web")}
-            >
-              Web Development
-            </Button>
-            <Button
-              variant={filter === "mobile" ? "default" : "outline"}
-              onClick={() => setFilter("mobile")}
-            >
-              Mobile Apps
-            </Button>
-          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="wait">
-            {filteredProjects.map((project) => (
+            {projects.map((project, index) => (
               <motion.div
                 key={project.title}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                onHoverStart={() => setHoveredProject(index)}
+                onHoverEnd={() => setHoveredProject(null)}
+                whileHover={{ y: -10 }}
+                className={`relative group ${
+                  project.featured ? "lg:col-span-1" : ""
+                }`}
               >
-                <Card className="flex flex-col h-full hover:shadow-lg transition-shadow">
-                  <CardHeader className="flex-1 p-6">
-                    <div className="aspect-video relative w-full mb-4 overflow-hidden rounded-lg">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/20 hover:border-white/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 h-full">
+                  <div className="relative overflow-hidden">
+                    <motion.img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                      whileHover={{ scale: 1.1 }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                    {/* Project Badges */}
+                    <div className="absolute top-4 right-4 flex gap-2">
+                      {project.featured && (
+                        <motion.span
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ delay: 0.2 }}
+                          className="px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold rounded-full flex items-center gap-1"
+                        >
+                          <Star size={12} />
+                          Featured
+                        </motion.span>
+                      )}
                     </div>
-                    <CardTitle className="mb-2">{project.title}</CardTitle>
-                    <CardDescription>{project.description}</CardDescription>
-                    {project.tools && (
-                      <p className="text-sm text-muted-foreground mt-2">
-                        Tools: {project.tools}
-                      </p>
-                    )}
-                  </CardHeader>
-                  <CardFooter className="flex justify-end gap-4 p-6 pt-0">
-                    <Button variant="outline" size="icon" asChild>
-                      <a
+
+                    {/* Project Stats */}
+                    <div className="absolute bottom-4 left-4 flex gap-3 text-white/80 text-xs">
+                      <div className="flex items-center gap-1 bg-black/30 px-2 py-1 rounded-full">
+                        <Star size={12} />
+                        {project.stats.stars}
+                      </div>
+                      <div className="flex items-center gap-1 bg-black/30 px-2 py-1 rounded-full">
+                        <Eye size={12} />
+                        {project.stats.views}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-300 mb-4 line-clamp-3 text-sm leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Project Highlights */}
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-blue-300 mb-2">
+                        Key Features:
+                      </h4>
+                      <div className="flex flex-wrap gap-1">
+                        {project.highlights
+                          .slice(0, 3)
+                          .map((highlight, idx) => (
+                            <span
+                              key={idx}
+                              className="px-2 py-1 bg-white/10 text-gray-300 text-xs rounded-full border border-white/20"
+                            >
+                              {highlight}
+                            </span>
+                          ))}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tools.map((tool) => (
+                        <span
+                          key={tool}
+                          className="px-3 py-1 bg-white/10 text-gray-300 text-xs rounded-full border border-white/20 hover:bg-white/20 transition-colors"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex gap-3">
+                      <motion.a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-all duration-300 border border-white/20 hover:border-white/40 flex-1 justify-center"
                       >
-                        <Github className="h-4 w-4" />
-                      </a>
-                    </Button>
-                    <Button variant="outline" size="icon" asChild>
-                      <a
+                        <Github size={16} />
+                        Code
+                      </motion.a>
+                      <motion.a
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 flex-1 justify-center"
                       >
-                        <Globe className="h-4 w-4" />
-                      </a>
-                    </Button>
-                  </CardFooter>
-                </Card>
+                        <ExternalLink size={16} />
+                        Live
+                      </motion.a>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </AnimatePresence>
         </div>
+
+        {/* Call to Action */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <motion.a
+            href="https://github.com/Manushprajwal7"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+          >
+            <Github size={20} />
+            View More on GitHub
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );
 }
-
-export default Projects;

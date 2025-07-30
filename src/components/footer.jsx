@@ -3,54 +3,65 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter, Instagram } from "lucide-react";
 
+// Footer Component
 export function Footer() {
   return (
-    <footer className="bg-muted/50 py-12">
-      <div className="container mx-auto px-4">
+    <footer className="bg-gray-900 py-12 border-t border-gray-800">
+      <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center"
         >
-          <div className="flex space-x-6 mb-4">
-            <a
-              href="https://github.com/Manushprajwal7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground/60 hover:text-foreground transition-colors"
-            >
-              <Github className="h-6 w-6" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/manush-prajwal-16a883294/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground/60 hover:text-foreground transition-colors"
-            >
-              <Linkedin className="h-6 w-6" />
-            </a>
-            <a
-              href="https://twitter.com/_manushprajwal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground/60 hover:text-foreground transition-colors"
-            >
-              <Twitter className="h-6 w-6" />
-            </a>
-            <a
-              href="https://www.instagram.com/manushprajwal._"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground/60 hover:text-foreground transition-colors"
-            >
-              <Instagram className="h-6 w-6" />
-            </a>
+          <div className="flex space-x-6 mb-6">
+            {[
+              {
+                href: "https://github.com/Manushprajwal7",
+                icon: Github,
+                label: "GitHub",
+              },
+              {
+                href: "https://www.linkedin.com/in/manush-prajwal-16a883294/",
+                icon: Linkedin,
+                label: "LinkedIn",
+              },
+              {
+                href: "https://twitter.com/_manushprajwal",
+                icon: Twitter,
+                label: "Twitter",
+              },
+              {
+                href: "https://www.instagram.com/manushprajwal._",
+                icon: Instagram,
+                label: "Instagram",
+              },
+            ].map((social) => (
+              <motion.a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+                className="p-3 bg-gray-800 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 text-gray-400 hover:text-white rounded-xl transition-all duration-300"
+                aria-label={social.label}
+              >
+                <social.icon size={20} />
+              </motion.a>
+            ))}
           </div>
-          <p className="text-center text-sm text-foreground/60">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-center text-gray-400"
+          >
             © {new Date().getFullYear()} Manush Prajwal. All rights reserved.
-          </p>
+            Built with ❤️ and React.
+          </motion.p>
         </motion.div>
       </div>
     </footer>
