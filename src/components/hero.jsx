@@ -15,6 +15,7 @@ import {
   Instagram,
   Globe,
   Download,
+  Eye,
   Send,
   GraduationCap,
   Briefcase,
@@ -246,7 +247,7 @@ export function Hero() {
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-xl backdrop-blur-sm hover:border-white/40 hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2"
               >
-                <Download size={20} />
+                <Eye size={20} />
                 View My Resume
               </motion.a>
             </motion.div>

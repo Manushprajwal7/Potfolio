@@ -30,6 +30,7 @@ import { toast } from "sonner";
 
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -49,17 +50,39 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast.success("Message sent successfully! I'll get back to you soon.");
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setShowSuccess(true);
+        toast.success("Message sent successfully! I'll get back to you soon.");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+        // Hide success message after 5 seconds
+        setTimeout(() => setShowSuccess(false), 5000);
+      } else {
+        toast.error(data.error || "Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast.error(
+        "Failed to send message. Please check your connection and try again."
+      );
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
+    }
   };
 
   const contactInfo = [
@@ -358,15 +381,41 @@ export function Contact() {
                   </motion.button>
                 </form>
 
-                {/* Success/Error Messages */}
+                {/* Success Message */}
+                {showSuccess && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                    transition={{ duration: 0.5 }}
+                    className="mt-6 p-6 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-xl backdrop-blur-sm"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="p-2 bg-green-500 rounded-full">
+                        <CheckCircle className="text-white" size={24} />
+                      </div>
+                      <div>
+                        <h4 className="text-green-400 font-semibold text-lg">
+                          Message Sent Successfully! 🎉
+                        </h4>
+                        <p className="text-green-300 text-sm mt-1">
+                          Thank you for reaching out! I'll get back to you
+                          within 24 hours.
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Info Message */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
                   viewport={{ once: true }}
-                  className="mt-6 p-4 bg-green-500/10 border border-green-500/20 rounded-xl"
+                  className="mt-6 p-4 bg-blue-500/10 border border-blue-500/20 rounded-xl"
                 >
-                  <div className="flex items-center gap-3 text-green-400">
+                  <div className="flex items-center gap-3 text-blue-400">
                     <CheckCircle size={20} />
                     <p className="text-sm">
                       I typically respond within 24 hours
@@ -395,7 +444,7 @@ export function Contact() {
               cutting-edge web development solutions.
             </p>
             <motion.a
-              href="mailto:manushprajwal7@gmail.com"
+              href="mailto:manushprajwal555@gmail.com"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-green-500/25 transition-all duration-300"

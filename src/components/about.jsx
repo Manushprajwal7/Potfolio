@@ -20,11 +20,11 @@ export function About() {
 
   const skills = [
     {
-      name: "React Native",
-      level: 90,
+      name: "React JS ",
+      level: 75,
       icon: <Smartphone size={20} />,
       color: "from-blue-500 to-cyan-500",
-      description: "Mobile app development",
+      description: "Frount end UI development",
     },
     {
       name: "Next.js",
@@ -41,7 +41,7 @@ export function About() {
       description: "Backend development",
     },
     {
-      name: "MongoDB/Firebase",
+      name: "MongoDB",
       level: 75,
       icon: <Database size={20} />,
       color: "from-green-600 to-yellow-500",
@@ -73,7 +73,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-to-br from-slate-50 to-gray-100 dark:from-gray-900 dark:to-slate-800 relative overflow-hidden"
+      className="relative z-0 bg-gray-900 text-white py-12 px-6"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
