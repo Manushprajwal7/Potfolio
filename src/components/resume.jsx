@@ -1,20 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Download,
   GraduationCap,
   Briefcase,
   Award,
-  Calendar,
   MapPin,
-  ExternalLink,
   Star,
   Trophy,
   BookOpen,
-  Users,
   Zap,
 } from "lucide-react";
 
@@ -127,8 +122,14 @@ export function Resume() {
   return (
     <section
       id="resume"
-      className="py-20 bg-gradient-to-br from-slate-50 to-gray-100 dark:from-gray-900 dark:to-slate-800 relative overflow-hidden"
+      className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden"
     >
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
+      </div>
+
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(59,130,246,0.3)_1px,transparent_0)] bg-[length:20px_20px]" />
@@ -154,10 +155,10 @@ export function Resume() {
             </div>
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Resume
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             My educational background, work experience, and achievements that
             shape my professional journey.
           </p>
@@ -185,19 +186,19 @@ export function Resume() {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300">
+            <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl border border-white/20 hover:border-white/40 hover:shadow-2xl transition-all duration-300">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl">
                   <GraduationCap className="text-white" size={24} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
+                <h3 className="text-2xl font-bold text-white">
                   Education & Experience
                 </h3>
               </div>
 
               {/* Education */}
               <div className="mb-8">
-                <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4 flex items-center gap-2">
+                <h4 className="text-lg font-semibold text-gray-300 mb-4 flex items-center gap-2">
                   <BookOpen size={20} className="text-blue-500" />
                   Education
                 </h4>
@@ -211,28 +212,28 @@ export function Resume() {
                     className="border-l-4 border-blue-500 pl-6 mb-6"
                   >
                     <div className="flex items-start justify-between mb-2">
-                      <h5 className="font-bold text-gray-800 dark:text-white text-lg">
+                      <h5 className="font-bold text-white text-lg">
                         {item.degree}
                       </h5>
-                      <span className="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">
+                      <span className="text-sm text-gray-400 bg-white/10 px-3 py-1 rounded-full">
                         {item.year}
                       </span>
                     </div>
-                    <p className="text-blue-600 dark:text-blue-400 font-medium mb-2">
+                    <p className="text-blue-400 font-medium mb-2">
                       {item.institution}
                     </p>
-                    <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
+                    <div className="flex items-center gap-2 text-sm text-gray-400 mb-3">
                       <MapPin size={14} />
                       {item.location}
                     </div>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
+                    <p className="text-gray-300 text-sm leading-relaxed mb-3">
                       {item.description}
                     </p>
                     <ul className="space-y-1">
                       {item.achievements.map((achievement, idx) => (
                         <li
                           key={idx}
-                          className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"
+                          className="flex items-center gap-2 text-sm text-gray-400"
                         >
                           <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
                           {achievement}
@@ -245,7 +246,7 @@ export function Resume() {
 
               {/* Experience */}
               <div>
-                <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4 flex items-center gap-2">
+                <h4 className="text-lg font-semibold text-gray-300 mb-4 flex items-center gap-2">
                   <Briefcase size={20} className="text-green-500" />
                   Work Experience
                 </h4>
@@ -259,28 +260,28 @@ export function Resume() {
                     className="border-l-4 border-green-500 pl-6 mb-6"
                   >
                     <div className="flex items-start justify-between mb-2">
-                      <h5 className="font-bold text-gray-800 dark:text-white text-lg">
+                      <h5 className="font-bold text-white text-lg">
                         {item.position}
                       </h5>
-                      <span className="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">
+                      <span className="text-sm text-gray-400 bg-white/10 px-3 py-1 rounded-full">
                         {item.year}
                       </span>
                     </div>
-                    <p className="text-green-600 dark:text-green-400 font-medium mb-2">
+                    <p className="text-green-400 font-medium mb-2">
                       {item.company}
                     </p>
-                    <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
+                    <div className="flex items-center gap-2 text-sm text-gray-400 mb-3">
                       <MapPin size={14} />
                       {item.location}
                     </div>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
+                    <p className="text-gray-300 text-sm leading-relaxed mb-3">
                       {item.description}
                     </p>
                     <ul className="space-y-1">
                       {item.achievements.map((achievement, idx) => (
                         <li
                           key={idx}
-                          className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"
+                          className="flex items-center gap-2 text-sm text-gray-400"
                         >
                           <div className="w-1.5 h-1.5 bg-green-500 rounded-full" />
                           {achievement}
@@ -302,8 +303,8 @@ export function Resume() {
             className="space-y-6"
           >
             {/* Achievements */}
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
-              <h3 className="text-xl font-bold mb-6 text-gray-800 dark:text-white flex items-center gap-3">
+            <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-xl border border-white/20">
+              <h3 className="text-xl font-bold mb-6 text-white flex items-center gap-3">
                 <div className="p-2 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg">
                   <Award className="text-white" size={20} />
                 </div>
@@ -318,20 +319,20 @@ export function Resume() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.02, y: -2 }}
-                    className="p-4 bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-700 dark:to-blue-900/20 rounded-xl border border-gray-200 dark:border-gray-600"
+                    className="p-4 bg-gradient-to-r from-white/5 to-blue-500/10 rounded-xl border border-white/10 backdrop-blur-sm"
                   >
                     <div className="flex items-start gap-3">
                       <div className="p-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg">
                         <item.icon className="text-white" size={16} />
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold text-gray-800 dark:text-white mb-1">
+                        <h4 className="font-semibold text-white mb-1">
                           {item.title}
                         </h4>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
+                        <p className="text-xs text-gray-400 mb-2">
                           {item.year} • {item.category}
                         </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
+                        <p className="text-sm text-gray-300">
                           {item.description}
                         </p>
                       </div>
@@ -342,8 +343,8 @@ export function Resume() {
             </div>
 
             {/* Skills */}
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
-              <h3 className="text-xl font-bold mb-6 text-gray-800 dark:text-white flex items-center gap-3">
+            <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-xl border border-white/20">
+              <h3 className="text-xl font-bold mb-6 text-white flex items-center gap-3">
                 <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg">
                   <Zap className="text-white" size={20} />
                 </div>
@@ -352,61 +353,61 @@ export function Resume() {
 
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                  <h4 className="font-semibold text-gray-300 mb-3">
                     Technical Skills
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {skills.technical.map((skill, index) => (
-                      <motion.span
+                      <motion.div
                         key={skill}
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: index * 0.05 }}
                         viewport={{ once: true }}
-                        className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs rounded-full border border-blue-200 dark:border-blue-800"
+                        className="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full border border-blue-500/30"
                       >
                         {skill}
-                      </motion.span>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                  <h4 className="font-semibold text-gray-300 mb-3">
                     Soft Skills
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {skills.soft.map((skill, index) => (
-                      <motion.span
+                      <motion.div
                         key={skill}
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: index * 0.05 }}
                         viewport={{ once: true }}
-                        className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs rounded-full border border-green-200 dark:border-green-800"
+                        className="px-3 py-1 bg-green-500/20 text-green-300 text-xs rounded-full border border-green-500/30"
                       >
                         {skill}
-                      </motion.span>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                  <h4 className="font-semibold text-gray-300 mb-3">
                     Tools & Platforms
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {skills.tools.map((tool, index) => (
-                      <motion.span
+                      <motion.div
                         key={tool}
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: index * 0.05 }}
                         viewport={{ once: true }}
-                        className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs rounded-full border border-purple-200 dark:border-purple-800"
+                        className="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full border border-purple-500/30"
                       >
                         {tool}
-                      </motion.span>
+                      </motion.div>
                     ))}
                   </div>
                 </div>

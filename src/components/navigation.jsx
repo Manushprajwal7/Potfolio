@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -23,7 +23,7 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="fixed w-full bg-black text-white z-50 border-b border-white/10">
+    <nav className="fixed w-full bg-slate-900/95 backdrop-blur-sm text-white z-50 border-b border-white/10">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link
@@ -40,7 +40,7 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-white/80 hover:text-white transition-colors"
+                className="text-white/80 hover:text-white transition-colors hover:text-blue-400"
               >
                 {item.label}
               </Link>
@@ -53,7 +53,7 @@ export function Navigation() {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white"
+              className="text-white hover:bg-white/10"
             >
               {isOpen ? (
                 <X className="h-5 w-5" />
@@ -72,7 +72,7 @@ export function Navigation() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute w-full bg-black text-white border-b border-white/10"
+            className="md:hidden absolute w-full bg-slate-900/95 backdrop-blur-sm text-white border-b border-white/10"
           >
             <div className="container mx-auto px-4 py-4">
               <div className="flex flex-col space-y-4">
@@ -80,7 +80,7 @@ export function Navigation() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-white/80 hover:text-white transition-colors"
+                    className="text-white/80 hover:text-white transition-colors hover:text-blue-400"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}

@@ -7,9 +7,9 @@ import { Footer } from "../components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Manush Prajwal - Web & Mobile Developer",
+  title: "Manush Prajwal - Full Stack Web Developer",
   description:
-    "Portfolio of Manush Prajwal, a passionate Web and Mobile Application Developer specializing in React Native and Next.js",
+    "Portfolio of Manush Prajwal, a passionate Full Stack Web Developer specializing in React Native and Next.js",
 };
 
 export default function RootLayout({ children }) {
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

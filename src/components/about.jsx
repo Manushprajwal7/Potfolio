@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Smartphone,
   Code,
@@ -15,16 +15,13 @@ import {
 } from "lucide-react";
 
 export function About() {
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
-
   const skills = [
     {
       name: "React JS ",
       level: 75,
       icon: <Smartphone size={20} />,
       color: "from-blue-500 to-cyan-500",
-      description: "Frount end UI development",
+      description: "Frontend UI development",
     },
     {
       name: "Next.js",
@@ -73,8 +70,15 @@ export function About() {
   return (
     <section
       id="about"
-      className="relative z-0 bg-gray-900 text-white py-12 px-6"
+      className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden"
     >
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
+      </div>
+
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(59,130,246,0.3)_1px,transparent_0)] bg-[length:20px_20px]" />
@@ -105,7 +109,7 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
+            className="text-4xl md:text-5xl font-bold mb-6 text-white"
           >
             About Me
           </motion.h2>
@@ -114,7 +118,7 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             I'm a dedicated Full Stack web application developer with a passion
             for creating seamless digital experiences. My journey in development
@@ -139,17 +143,15 @@ export function About() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05, y: -5 }}
-              className="text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700"
+              className="text-center p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg border border-white/20 hover:border-white/40 transition-all duration-300"
             >
               <div className="inline-block p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl mb-4">
                 <stat.icon className="text-white" size={24} />
               </div>
-              <div className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+              <div className="text-3xl font-bold text-white mb-2">
                 {stat.value}
               </div>
-              <div className="text-gray-600 dark:text-gray-400 text-sm">
-                {stat.label}
-              </div>
+              <div className="text-gray-300 text-sm">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -164,35 +166,33 @@ export function About() {
           >
             <motion.div
               whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300"
+              className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl border border-white/20 hover:border-white/40 hover:shadow-2xl transition-all duration-300"
             >
-              <h3 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white flex items-center gap-3">
+              <h3 className="text-2xl font-bold mb-6 text-white flex items-center gap-3">
                 <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg">
                   <Users className="text-white" size={24} />
                 </div>
                 My Journey
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+              <p className="text-gray-300 leading-relaxed mb-4">
                 Starting as a curious learner, I've developed expertise in
-                modern web technologies . I believe in creating solutions that
+                modern web technologies. I believe in creating solutions that
                 not only work well but also provide exceptional user
                 experiences.
               </p>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 When I'm not coding, you'll find me exploring new technologies,
-                contributing to meaningfull Reaserch publication,or sharing
+                contributing to meaningful research publications, or sharing
                 knowledge with the developer community.
               </p>
             </motion.div>
 
             <motion.div
               whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-8 rounded-2xl border border-blue-500/20 dark:border-purple-500/20"
+              className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-8 rounded-2xl border border-blue-500/20 backdrop-blur-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">
-                What I Do
-              </h3>
-              <ul className="space-y-3 text-gray-600 dark:text-gray-300">
+              <h3 className="text-2xl font-bold mb-4 text-white">What I Do</h3>
+              <ul className="space-y-3 text-gray-300">
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-blue-500 rounded-full" />
                   Full-stack web development
@@ -218,9 +218,9 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700"
+            className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl border border-white/20"
           >
-            <h3 className="text-2xl font-bold mb-8 text-gray-800 dark:text-white flex items-center gap-3">
+            <h3 className="text-2xl font-bold mb-8 text-white flex items-center gap-3">
               <div className="p-2 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg">
                 <Target className="text-white" size={24} />
               </div>
@@ -247,19 +247,19 @@ export function About() {
                         <div className="text-white">{skill.icon}</div>
                       </motion.div>
                       <div>
-                        <span className="font-semibold text-gray-800 dark:text-white">
+                        <span className="font-semibold text-white">
                           {skill.name}
                         </span>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                        <p className="text-xs text-gray-400">
                           {skill.description}
                         </p>
                       </div>
                     </div>
-                    <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                    <span className="text-sm font-medium text-gray-300">
                       {skill.level}%
                     </span>
                   </div>
-                  <div className="relative h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                  <div className="relative h-3 bg-white/10 rounded-full overflow-hidden">
                     <motion.div
                       className={`h-full bg-gradient-to-r ${skill.color} rounded-full shadow-lg`}
                       initial={{ width: 0 }}
@@ -292,12 +292,10 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
               viewport={{ once: true }}
-              className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-200 dark:border-blue-800"
+              className="mt-8 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl border border-blue-500/20 backdrop-blur-sm"
             >
-              <h4 className="font-semibold text-gray-800 dark:text-white mb-3">
-                Always Learning
-              </h4>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
+              <h4 className="font-semibold text-white mb-3">Always Learning</h4>
+              <p className="text-sm text-gray-300">
                 I'm constantly exploring new technologies and frameworks to stay
                 ahead of the curve and deliver cutting-edge solutions.
               </p>

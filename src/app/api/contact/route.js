@@ -22,35 +22,42 @@ export async function POST(request) {
       );
     }
 
-    // Check if environment variables are set
-    if (
-      !process.env.SMTP_EMAIL ||
-      !process.env.SMTP_PASSWORD ||
-      !process.env.RECIPIENT_EMAIL
-    ) {
-      console.error("Missing required environment variables");
+    // Debug environment variables
+    console.log("Environment check:");
+    console.log("SMTP_EMAIL:", process.env.SMTP_EMAIL ? "✓ Set" : "✗ Missing");
+    console.log(
+      "SMTP_APP_PASSWORD:",
+      process.env.SMTP_APP_PASSWORD ? "✓ Set" : "✗ Missing"
+    );
+
+    // Check if credentials are available
+    if (!process.env.SMTP_EMAIL || !process.env.SMTP_APP_PASSWORD) {
+      console.error("Missing SMTP credentials in environment variables");
       return NextResponse.json(
-        { error: "Server configuration error" },
+        {
+          error: "Email service not configured properly. Missing credentials.",
+        },
         { status: 500 }
       );
     }
 
+    // Create nodemailer transporter
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
+      port: 587,
+      secure: false, // Use TLS
       auth: {
-        user: process.env.SMTP_EMAIL,
-        pass: process.env.SMTP_PASSWORD,
+        user: process.env.SMTP_EMAIL, // Your Gmail address
+        pass: process.env.SMTP_APP_PASSWORD, // Your Gmail App Password
       },
     });
 
-    // Verify connection configuration
+    // Verify transporter configuration
     try {
       await transporter.verify();
       console.log("SMTP connection verified successfully");
-    } catch (verifyError) {
-      console.error("SMTP verification failed:", verifyError);
+    } catch (error) {
+      console.error("SMTP verification failed:", error);
       return NextResponse.json(
         { error: "Email service configuration error" },
         { status: 500 }
@@ -59,18 +66,12 @@ export async function POST(request) {
 
     const mailOptions = {
       from: process.env.SMTP_EMAIL,
-      to: process.env.RECIPIENT_EMAIL,
-      replyTo: email, // This allows you to reply directly to the sender
-      subject: `Contact Form: ${subject}`,
-      text: `
-        Name: ${name}
-        Email: ${email}
-        Subject: ${subject}
-        Message: ${message}
-      `,
+      to: "manushprajwal555@gmail.com", // Your email where you want to receive messages
+      replyTo: email,
+      subject: `Portfolio Contact: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
-          <h2 style="color: #333; border-bottom: 2px solid #4CAF50; padding-bottom: 10px;">New Contact Form Submission</h2>
+          <h2 style="color: #333; border-bottom: 2px solid #4CAF50; padding-bottom: 10px;">New Portfolio Contact</h2>
           
           <div style="margin: 20px 0;">
             <h3 style="color: #555; margin-bottom: 5px;">Contact Details:</h3>
@@ -87,27 +88,36 @@ export async function POST(request) {
           </div>
           
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; color: #666; font-size: 12px;">
-            <p>This email was sent from your website's contact form.</p>
+            <p>This email was sent from your portfolio website.</p>
+            <p>Sent at: ${new Date().toLocaleString()}</p>
           </div>
         </div>
       `,
     };
 
+    // Send the email
     await transporter.sendMail(mailOptions);
-    console.log("Email sent successfully to:", process.env.RECIPIENT_EMAIL);
+
+    // Log successful submission
+    console.log("=== EMAIL SENT SUCCESSFULLY ===");
+    console.log("To:", "manushprajwal555@gmail.com");
+    console.log("From:", email);
+    console.log("Subject:", subject);
+    console.log("Timestamp:", new Date().toISOString());
+    console.log("===============================");
 
     return NextResponse.json(
-      { message: "Email sent successfully" },
+      { message: "Email sent successfully!" },
       { status: 200 }
     );
   } catch (error) {
-    console.error("Error sending email:", error);
+    console.error("Error processing contact form:", error);
 
     // More specific error handling
     if (error.code === "EAUTH") {
       return NextResponse.json(
         {
-          error: "Email authentication failed. Please check your credentials.",
+          error: "Email authentication failed. Please check SMTP credentials.",
         },
         { status: 500 }
       );
@@ -116,11 +126,11 @@ export async function POST(request) {
         { error: "Failed to connect to email server." },
         { status: 500 }
       );
-    } else {
-      return NextResponse.json(
-        { error: "Failed to send email. Please try again later." },
-        { status: 500 }
-      );
     }
+
+    return NextResponse.json(
+      { error: "Failed to send message. Please try again later." },
+      { status: 500 }
+    );
   }
 }

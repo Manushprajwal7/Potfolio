@@ -6,7 +6,7 @@ import { Github, Linkedin, Twitter, Instagram } from "lucide-react";
 // Footer Component
 export function Footer() {
   return (
-    <footer className="bg-gray-900 py-12 border-t border-gray-800">
+    <footer className="bg-slate-900 py-12 border-t border-white/10">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -45,7 +45,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-3 bg-gray-800 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 text-gray-400 hover:text-white rounded-xl transition-all duration-300"
+                className="p-3 bg-white/10 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 text-gray-400 hover:text-white rounded-xl transition-all duration-300 border border-white/20 hover:border-white/40"
                 aria-label={social.label}
               >
                 <social.icon size={20} />

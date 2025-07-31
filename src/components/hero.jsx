@@ -1,52 +1,19 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useTransform,
-  useMotionValue,
-  useSpring,
-} from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import {
   Github,
   Linkedin,
   Twitter,
-  Instagram,
-  Globe,
-  Download,
   Eye,
-  Send,
-  GraduationCap,
-  Briefcase,
-  Award,
   Code,
   Smartphone,
-  Database,
-  Palette,
-  Zap,
-  Users,
   ChevronDown,
   ArrowRight,
 } from "lucide-react";
 
 // Hero Component
 export function Hero() {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 150]);
-  // Responsive opacity: only fade on desktop
-  const [isDesktop, setIsDesktop] = useState(true);
-
-  useEffect(() => {
-    const checkScreen = () => setIsDesktop(window.innerWidth >= 768);
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
-
-  // Always call useTransform, but use its value only on desktop
-  const opacityMotion = useTransform(scrollY, [0, 300], [1, 0]);
-  const opacity = isDesktop ? opacityMotion : 1;
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const mouseX = useSpring(useMotionValue(0), { stiffness: 500, damping: 100 });
   const mouseY = useSpring(useMotionValue(0), { stiffness: 500, damping: 100 });
@@ -85,10 +52,9 @@ export function Hero() {
   ];
 
   return (
-    <motion.section
+    <section
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900"
-      style={{ y, opacity }}
     >
       {/* Enhanced Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -102,7 +68,7 @@ export function Hero() {
           }}
           transition={{
             duration: 20,
-            repeat: Infinity,
+            repeat: Number.POSITIVE_INFINITY,
             ease: "linear",
           }}
         />
@@ -116,7 +82,7 @@ export function Hero() {
           }}
           transition={{
             duration: 25,
-            repeat: Infinity,
+            repeat: Number.POSITIVE_INFINITY,
             ease: "linear",
           }}
         />
@@ -128,7 +94,7 @@ export function Hero() {
           }}
           transition={{
             duration: 15,
-            repeat: Infinity,
+            repeat: Number.POSITIVE_INFINITY,
             ease: "easeInOut",
           }}
         />
@@ -151,7 +117,7 @@ export function Hero() {
             }}
             transition={{
               duration: 3 + Math.random() * 2,
-              repeat: Infinity,
+              repeat: Number.POSITIVE_INFINITY,
               delay: Math.random() * 2,
             }}
           />
@@ -197,7 +163,7 @@ export function Hero() {
                 }}
                 transition={{
                   duration: 5,
-                  repeat: Infinity,
+                  repeat: Number.POSITIVE_INFINITY,
                   ease: "linear",
                 }}
               >
@@ -298,7 +264,7 @@ export function Hero() {
                 }}
                 transition={{
                   duration: 8,
-                  repeat: Infinity,
+                  repeat: Number.POSITIVE_INFINITY,
                   ease: "linear",
                 }}
               />
@@ -310,7 +276,7 @@ export function Hero() {
                 }}
                 transition={{
                   duration: 12,
-                  repeat: Infinity,
+                  repeat: Number.POSITIVE_INFINITY,
                   ease: "linear",
                 }}
               />
@@ -334,7 +300,7 @@ export function Hero() {
                 }}
                 transition={{
                   duration: 3,
-                  repeat: Infinity,
+                  repeat: Number.POSITIVE_INFINITY,
                   ease: "easeInOut",
                 }}
               >
@@ -349,7 +315,7 @@ export function Hero() {
                 }}
                 transition={{
                   duration: 4,
-                  repeat: Infinity,
+                  repeat: Number.POSITIVE_INFINITY,
                   ease: "easeInOut",
                 }}
               >
@@ -368,7 +334,7 @@ export function Hero() {
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
             className="flex flex-col items-center text-white/60"
           >
             <span className="text-sm mb-2">Scroll Down</span>
@@ -376,6 +342,6 @@ export function Hero() {
           </motion.div>
         </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 }
