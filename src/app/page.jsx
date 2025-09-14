@@ -8,6 +8,7 @@ import { Contact } from "@/components/contact";
 import { Resume } from "@/components/resume";
 
 const App = () => {
+      
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -23,6 +24,7 @@ const App = () => {
   }
 
   return (
+    
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Hero />
       <About />
