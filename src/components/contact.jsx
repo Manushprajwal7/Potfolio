@@ -91,21 +91,21 @@ export function Contact() {
       title: "Email",
       value: "manushprajwal555@gmail.com",
       href: "mailto:manushprajwal555@gmail.com",
-      color: "from-blue-500 to-cyan-500",
+      color: "from-red-500 to-red-500",
     },
     {
       icon: MapPin,
       title: "Location",
       value: "Bangalore, India",
       href: "#",
-      color: "from-green-500 to-emerald-500",
+      color: "from-red-500 to-red-600",
     },
     {
       icon: Clock,
       title: "Available",
       value: "Mon - Fri, 9AM - 6PM IST",
       href: "#",
-      color: "from-purple-500 to-pink-500",
+      color: "from-red-500 to-red-600",
     },
   ];
 
@@ -120,26 +120,26 @@ export function Contact() {
       icon: Linkedin,
       href: "https://www.linkedin.com/in/manush-prajwal-16a883294/",
       label: "LinkedIn",
-      color: "from-blue-600 to-blue-700",
+      color: "from-zinc-700 to-zinc-900",
     },
     {
       icon: Twitter,
       href: "https://twitter.com/_manushprajwal",
       label: "Twitter",
-      color: "from-blue-400 to-blue-500",
+      color: "from-zinc-300 to-zinc-500",
     },
   ];
 
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 relative overflow-hidden"
+      className="py-20 bg-black relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-20 w-72 h-72 bg-red-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-zinc-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -157,7 +157,7 @@ export function Contact() {
             viewport={{ once: true }}
             className="inline-block mb-6"
           >
-            <div className="p-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl shadow-lg">
+            <div className="p-4 bg-zinc-800 rounded-2xl shadow-lg border border-zinc-700">
               <MessageSquare className="text-white" size={32} />
             </div>
           </motion.div>
@@ -183,7 +183,7 @@ export function Contact() {
             >
               <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20">
                 <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                  <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg">
+                  <div className="p-2 bg-gradient-to-r from-red-500 to-red-600 rounded-lg">
                     <MessageSquare className="text-white" size={24} />
                   </div>
                   Let's Connect
@@ -214,7 +214,7 @@ export function Contact() {
                         <p className="text-white font-semibold">{info.title}</p>
                         <a
                           href={info.href}
-                          className="text-gray-300 hover:text-blue-400 transition-colors"
+                          className="text-gray-300 hover:text-white transition-colors"
                         >
                           {info.value}
                         </a>
@@ -263,7 +263,7 @@ export function Contact() {
             >
               <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20">
                 <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                  <div className="p-2 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg">
+                  <div className="p-2 bg-gradient-to-r from-red-500 to-red-600 rounded-lg">
                     <Send className="text-white" size={24} />
                   </div>
                   Send Message
@@ -287,7 +287,7 @@ export function Contact() {
                         onChange={handleChange}
                         placeholder="Your Name"
                         required
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-white/20 transition-all duration-300"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-red-500 focus:bg-white/10 transition-all duration-300"
                       />
                     </motion.div>
 
@@ -307,7 +307,7 @@ export function Contact() {
                         onChange={handleChange}
                         placeholder="your.email@example.com"
                         required
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-white/20 transition-all duration-300"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-red-500 focus:bg-white/10 transition-all duration-300"
                       />
                     </motion.div>
                   </div>
@@ -328,7 +328,7 @@ export function Contact() {
                       onChange={handleChange}
                       placeholder="What's this about?"
                       required
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-white/20 transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-red-500 focus:bg-white/10 transition-all duration-300"
                     />
                   </motion.div>
 
@@ -348,7 +348,7 @@ export function Contact() {
                       placeholder="Tell me about your project or question..."
                       required
                       rows={6}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-white/20 transition-all duration-300 resize-none"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-zinc-500 focus:bg-white/10 transition-all duration-300 resize-none"
                     />
                   </motion.div>
 
@@ -361,7 +361,7 @@ export function Contact() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.7 }}
                     viewport={{ once: true }}
-                    className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 group"
+                    className="w-full px-8 py-4 bg-white text-black font-semibold rounded-xl shadow-lg hover:bg-zinc-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 group"
                   >
                     {isSubmitting ? (
                       <>
@@ -388,10 +388,10 @@ export function Contact() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -20, scale: 0.95 }}
                     transition={{ duration: 0.5 }}
-                    className="mt-6 p-6 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-xl backdrop-blur-sm"
+                    className="mt-6 p-6 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="p-2 bg-green-500 rounded-full">
+                      <div className="p-2 bg-white text-black rounded-full">
                         <CheckCircle className="text-white" size={24} />
                       </div>
                       <div>
@@ -413,9 +413,9 @@ export function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
                   viewport={{ once: true }}
-                  className="mt-6 p-4 bg-blue-500/10 border border-blue-500/20 rounded-xl"
+                  className="mt-6 p-4 bg-white/5 border border-white/10 rounded-xl"
                 >
-                  <div className="flex items-center gap-3 text-blue-400">
+                  <div className="flex items-center gap-3 text-white">
                     <CheckCircle size={20} />
                     <p className="text-sm">
                       I typically respond within 24 hours
@@ -447,7 +447,7 @@ export function Contact() {
               href="mailto:manushprajwal555@gmail.com"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-green-500/25 transition-all duration-300"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-xl shadow-lg hover:bg-zinc-200 transition-all duration-300"
             >
               <Mail size={20} />
               Start a Conversation

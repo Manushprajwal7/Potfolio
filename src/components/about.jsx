@@ -20,7 +20,7 @@ export function About() {
       name: "React JS ",
       level: 75,
       icon: <Smartphone size={20} />,
-      color: "from-blue-500 to-cyan-500",
+      color: "from-zinc-400 to-zinc-600",
       description: "Frontend UI development",
     },
     {
@@ -34,7 +34,7 @@ export function About() {
       name: "Node.js",
       level: 80,
       icon: <Zap size={20} />,
-      color: "from-green-500 to-emerald-500",
+      color: "from-zinc-600 to-black",
       description: "Backend development",
     },
     {
@@ -55,7 +55,7 @@ export function About() {
       name: "UI/UX Design",
       level: 78,
       icon: <Palette size={20} />,
-      color: "from-pink-500 to-purple-500",
+      color: "from-zinc-500 to-zinc-700",
       description: "User experience design",
     },
   ];
@@ -70,13 +70,13 @@ export function About() {
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden"
+      className="py-20 bg-black relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-20 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-72 h-72 bg-zinc-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-zinc-800/5 rounded-full blur-3xl" />
       </div>
 
       {/* Background Pattern */}
@@ -99,7 +99,7 @@ export function About() {
             viewport={{ once: true }}
             className="inline-block mb-6"
           >
-            <div className="p-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl shadow-lg">
+            <div className="p-4 bg-zinc-800 rounded-2xl shadow-lg border border-zinc-700">
               <Users className="text-white" size={32} />
             </div>
           </motion.div>
@@ -145,7 +145,7 @@ export function About() {
               whileHover={{ scale: 1.05, y: -5 }}
               className="text-center p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg border border-white/20 hover:border-white/40 transition-all duration-300"
             >
-              <div className="inline-block p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl mb-4">
+              <div className="inline-block p-3 bg-zinc-800 rounded-xl mb-4 border border-zinc-700">
                 <stat.icon className="text-white" size={24} />
               </div>
               <div className="text-3xl font-bold text-white mb-2">
@@ -169,7 +169,7 @@ export function About() {
               className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl border border-white/20 hover:border-white/40 hover:shadow-2xl transition-all duration-300"
             >
               <h3 className="text-2xl font-bold mb-6 text-white flex items-center gap-3">
-                <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg">
+                <div className="p-2 bg-zinc-800 rounded-lg border border-zinc-700">
                   <Users className="text-white" size={24} />
                 </div>
                 My Journey
@@ -189,24 +189,24 @@ export function About() {
 
             <motion.div
               whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-8 rounded-2xl border border-blue-500/20 backdrop-blur-lg"
+              className="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-lg"
             >
               <h3 className="text-2xl font-bold mb-4 text-white">What I Do</h3>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full" />
+                  <div className="w-2 h-2 bg-zinc-200 rounded-full" />
                   Full-stack web development
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full" />
+                  <div className="w-2 h-2 bg-zinc-400 rounded-full" />
                   Mobile app development
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full" />
+                  <div className="w-2 h-2 bg-zinc-600 rounded-full" />
                   UI/UX design
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-pink-500 rounded-full" />
+                  <div className="w-2 h-2 bg-black border border-white/20 rounded-full" />
                   Database design & management
                 </li>
               </ul>
@@ -221,7 +221,7 @@ export function About() {
             className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl border border-white/20"
           >
             <h3 className="text-2xl font-bold mb-8 text-white flex items-center gap-3">
-              <div className="p-2 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg">
+              <div className="p-2 bg-zinc-800 rounded-lg border border-zinc-700">
                 <Target className="text-white" size={24} />
               </div>
               Technical Skills
@@ -292,7 +292,7 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
               viewport={{ once: true }}
-              className="mt-8 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl border border-blue-500/20 backdrop-blur-sm"
+              className="mt-8 p-6 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm"
             >
               <h4 className="font-semibold text-white mb-3">Always Learning</h4>
               <p className="text-sm text-gray-300">

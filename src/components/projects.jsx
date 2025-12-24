@@ -163,12 +163,12 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 relative overflow-hidden"
+      className="py-20 bg-black relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-20 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-72 h-72 bg-zinc-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -186,7 +186,7 @@ export function Projects() {
             viewport={{ once: true }}
             className="inline-block mb-6"
           >
-            <div className="p-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl shadow-lg">
+            <div className="p-4 bg-zinc-800 rounded-2xl shadow-lg border border-zinc-700">
               <Globe className="text-white" size={32} />
             </div>
           </motion.div>
@@ -218,7 +218,7 @@ export function Projects() {
                   project.featured ? "lg:col-span-1" : ""
                 }`}
               >
-                <div className="bg-white/10 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/20 hover:border-white/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 h-full">
+                <div className="bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/10 hover:border-white/40 transition-all duration-500 hover:shadow-2xl hover:shadow-white/10 h-full">
                   <div className="relative overflow-hidden">
                     <motion.img
                       src={project.image}
@@ -257,7 +257,7 @@ export function Projects() {
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-zinc-400 transition-colors">
                       {project.title}
                     </h3>
                     <p className="text-gray-300 mb-4 line-clamp-3 text-sm leading-relaxed">
@@ -266,7 +266,7 @@ export function Projects() {
 
                     {/* Project Highlights */}
                     <div className="mb-4">
-                      <h4 className="text-sm font-semibold text-blue-300 mb-2">
+                      <h4 className="text-sm font-semibold text-zinc-400 mb-2">
                         Key Features:
                       </h4>
                       <div className="flex flex-wrap gap-1">
@@ -312,7 +312,7 @@ export function Projects() {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 flex-1 justify-center"
+                        className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-lg transition-all duration-300 hover:bg-zinc-200 flex-1 justify-center"
                       >
                         <ExternalLink size={16} />
                         Live
@@ -339,7 +339,7 @@ export function Projects() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-xl shadow-lg hover:bg-zinc-200 transition-all duration-300"
           >
             <Github size={20} />
             View More on GitHub

@@ -54,12 +54,12 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black"
     >
       {/* Enhanced Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
+          className="absolute -top-40 -right-40 w-96 h-96 bg-zinc-500/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             rotate: [0, 180, 360],
@@ -73,7 +73,7 @@ export function Hero() {
           }}
         />
         <motion.div
-          className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
+          className="absolute -bottom-40 -left-40 w-96 h-96 bg-zinc-600/10 rounded-full blur-3xl"
           animate={{
             scale: [1.3, 1, 1.3],
             rotate: [360, 180, 0],
@@ -87,7 +87,7 @@ export function Hero() {
           }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-500/10 rounded-full blur-2xl"
+          className="absolute top-1/2 left-1/2 w-64 h-64 bg-zinc-800/10 rounded-full blur-2xl"
           animate={{
             scale: [1, 1.5, 1],
             opacity: [0.3, 0.6, 0.3],
@@ -139,7 +139,7 @@ export function Hero() {
               className="mb-6"
             >
               <motion.span
-                className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-blue-500/30 rounded-full text-blue-300 text-sm font-medium mb-4"
+                className="inline-block px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-white text-sm font-medium mb-4"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)",
@@ -157,7 +157,7 @@ export function Hero() {
             >
               Hi, I'm{" "}
               <motion.span
-                className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                className="bg-gradient-to-r from-white via-zinc-400 to-zinc-600 bg-clip-text text-transparent"
                 animate={{
                   backgroundPosition: ["0%", "100%", "0%"],
                 }}
@@ -178,7 +178,7 @@ export function Hero() {
               className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed"
             >
               A passionate{" "}
-              <span className="text-blue-400 font-semibold">
+              <span className="text-white font-semibold underline decoration-zinc-500 underline-offset-4">
                 Full-Stack Developer
               </span>{" "}
               crafting exceptional digital experiences with modern technologies.
@@ -197,7 +197,7 @@ export function Hero() {
                   boxShadow: "0 10px 30px rgba(59, 130, 246, 0.5)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2"
+                className="group px-8 py-4 bg-white text-black font-semibold rounded-xl shadow-lg hover:bg-zinc-200 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 View My Work
                 <ArrowRight
@@ -257,7 +257,7 @@ export function Hero() {
             <div className="relative w-80 h-80 mx-auto">
               {/* Enhanced Glow Effect */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-xl opacity-70"
+                className="absolute inset-0 bg-white rounded-full blur-2xl opacity-20"
                 animate={{
                   scale: [1, 1.2, 1],
                   rotate: [0, 180, 360],
@@ -269,7 +269,7 @@ export function Hero() {
                 }}
               />
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full blur-xl opacity-50"
+                className="absolute inset-0 bg-zinc-800 rounded-full blur-2xl opacity-30"
                 animate={{
                   scale: [1.2, 1, 1.2],
                   rotate: [360, 180, 0],
@@ -293,7 +293,7 @@ export function Hero() {
 
               {/* Floating Elements */}
               <motion.div
-                className="absolute -top-4 -right-4 p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg"
+                className="absolute -top-4 -right-4 p-3 bg-white text-black rounded-full shadow-lg border border-zinc-200"
                 animate={{
                   y: [0, -10, 0],
                   rotate: [0, 360],
@@ -308,7 +308,7 @@ export function Hero() {
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-4 -left-4 p-3 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full shadow-lg"
+                className="absolute -bottom-4 -left-4 p-3 bg-black text-white rounded-full shadow-lg border border-zinc-800"
                 animate={{
                   y: [0, 10, 0],
                   rotate: [360, 0],

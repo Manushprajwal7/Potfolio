@@ -23,15 +23,15 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="fixed w-full bg-slate-900/95 backdrop-blur-sm text-white z-50 border-b border-white/10">
+    <nav className="fixed w-full bg-black/95 backdrop-blur-sm text-white z-50 border-b border-white/10">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link
             href="/"
             className="text-2xl font-bold relative inline-block text-white"
           >
-            <span className="relative z-10 px-2">MP</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 rounded-lg -z-10"></span>
+            <span className="relative z-10 px-2 text-black">MP</span>
+            <span className="absolute inset-0 bg-white rounded-lg -z-10"></span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -40,7 +40,7 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-white/80 hover:text-white transition-colors hover:text-blue-400"
+                className="text-white/80 hover:text-white transition-colors hover:text-zinc-400"
               >
                 {item.label}
               </Link>
@@ -72,7 +72,7 @@ export function Navigation() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute w-full bg-slate-900/95 backdrop-blur-sm text-white border-b border-white/10"
+            className="md:hidden absolute w-full bg-black/95 backdrop-blur-sm text-white border-b border-white/10"
           >
             <div className="container mx-auto px-4 py-4">
               <div className="flex flex-col space-y-4">
@@ -80,7 +80,7 @@ export function Navigation() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-white/80 hover:text-white transition-colors hover:text-blue-400"
+                    className="text-white/80 hover:text-white transition-colors hover:text-zinc-400"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
