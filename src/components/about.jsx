@@ -17,61 +17,86 @@ import {
 export function About() {
   const skills = [
     {
-      name: "React JS ",
-      level: 75,
-      icon: <Smartphone size={20} />,
-      color: "from-zinc-400 to-zinc-600",
-      description: "Frontend UI development",
-    },
-    {
-      name: "Next.js",
-      level: 85,
-      icon: <Code size={20} />,
-      color: "from-gray-700 to-gray-900",
-      description: "Full-stack web development",
-    },
-    {
       name: "Node.js",
-      level: 80,
+      level: 85,
       icon: <Zap size={20} />,
       color: "from-zinc-600 to-black",
       description: "Backend development",
     },
     {
+      name: "NestJS",
+      level: 80,
+      icon: <Code size={20} />,
+      color: "from-red-500 to-red-700",
+      description: "Microservices framework",
+    },
+    {
+      name: "Kafka",
+      level: 75,
+      icon: <Database size={20} />,
+      color: "from-purple-500 to-purple-700",
+      description: "Event streaming",
+    },
+    {
+      name: "PostgreSQL",
+      level: 80,
+      icon: <Database size={20} />,
+      color: "from-blue-500 to-blue-700",
+      description: "Relational database",
+    },
+    {
       name: "MongoDB",
       level: 75,
       icon: <Database size={20} />,
-      color: "from-green-600 to-yellow-500",
-      description: "Database management",
+      color: "from-green-600 to-green-800",
+      description: "Document database",
     },
     {
-      name: "JavaScript/TypeScript",
+      name: "REST APIs",
       level: 85,
       icon: <Code size={20} />,
-      color: "from-yellow-500 to-orange-500",
-      description: "Programming languages",
+      color: "from-indigo-500 to-indigo-700",
+      description: "API development",
     },
     {
-      name: "UI/UX Design",
+      name: "Microservices",
       level: 78,
-      icon: <Palette size={20} />,
-      color: "from-zinc-500 to-zinc-700",
-      description: "User experience design",
+      icon: <Target size={20} />,
+      color: "from-teal-500 to-teal-700",
+      description: "Service architecture",
+    },
+    {
+      name: "Docker",
+      level: 75,
+      icon: <Zap size={20} />,
+      color: "from-cyan-500 to-cyan-700",
+      description: "Containerization",
+    },
+    {
+      name: "React",
+      level: 70,
+      icon: <Smartphone size={20} />,
+      color: "from-zinc-400 to-zinc-600",
+      description: "Frontend library",
+    },
+    {
+      name: "Next.js",
+      level: 72,
+      icon: <Code size={20} />,
+      color: "from-gray-700 to-gray-900",
+      description: "Frontend framework",
     },
   ];
 
   const stats = [
-    { icon: Target, value: "15+", label: "Projects Completed" },
-    { icon: TrendingUp, value: "2+", label: "Years Experience" },
-    { icon: Heart, value: "100%", label: "Client Satisfaction" },
-    { icon: Lightbulb, value: "24/7", label: "Problem Solving" },
+    { icon: Target, value: "1.3K+", label: "Daily Active Users Supported" },
+    { icon: TrendingUp, value: "5+", label: "Backend Services Deployed" },
+    { icon: Heart, value: "Kafka-Based", label: "Real-Time Pipelines" },
+    { icon: Lightbulb, value: "Production", label: "Systems in Use" },
   ];
 
   return (
-    <section
-      id="about"
-      className="py-20 bg-black relative overflow-hidden"
-    >
+    <section id="about" className="py-20 bg-black relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
@@ -120,10 +145,10 @@ export function About() {
             viewport={{ once: true }}
             className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            I'm a dedicated Full Stack web application developer with a passion
-            for creating seamless digital experiences. My journey in development
-            started with curiosity and has evolved into a professional pursuit
-            of excellence.
+            I am a backend engineer specializing in designing scalable APIs,
+            microservice architectures, and distributed systems. I focus on
+            building reliable backend platforms that handle real-world scale,
+            concurrency, and data consistency.
           </motion.p>
         </motion.div>
 
@@ -175,15 +200,15 @@ export function About() {
                 My Journey
               </h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Starting as a curious learner, I've developed expertise in
-                modern web technologies. I believe in creating solutions that
-                not only work well but also provide exceptional user
-                experiences.
+                I have experience building production backend systems using
+                Node.js and NestJS, implementing Kafka-based event pipelines,
+                containerized services with Docker, and database-driven
+                architectures with PostgreSQL and MongoDB.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                When I'm not coding, you'll find me exploring new technologies,
-                contributing to meaningful research publications, or sharing
-                knowledge with the developer community.
+                My interests include backend system design, event-driven
+                architectures, performance optimization, and building
+                fault-tolerant services.
               </p>
             </motion.div>
 
@@ -195,19 +220,27 @@ export function About() {
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-zinc-200 rounded-full" />
-                  Full-stack web development
+                  Backend API Design & Development
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-zinc-400 rounded-full" />
-                  Mobile app development
+                  Microservices Architecture (NestJS)
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-zinc-600 rounded-full" />
-                  UI/UX design
+                  Event-Driven Systems (Kafka)
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-black border border-white/20 rounded-full" />
-                  Database design & management
+                  Database Design & Optimization
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                  Authentication & Authorization Systems
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-purple-400 rounded-full" />
+                  Dockerized Backend Deployments
                 </li>
               </ul>
             </motion.div>

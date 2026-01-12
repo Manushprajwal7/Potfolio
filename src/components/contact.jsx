@@ -131,10 +131,7 @@ export function Contact() {
   ];
 
   return (
-    <section
-      id="contact"
-      className="py-20 bg-black relative overflow-hidden"
-    >
+    <section id="contact" className="py-20 bg-black relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-72 h-72 bg-red-500/10 rounded-full blur-3xl" />
@@ -437,20 +434,20 @@ export function Contact() {
         >
           <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Ready to Start a Project?
+              Interested in Backend Engineering Opportunities?
             </h3>
             <p className="text-gray-300 mb-6">
-              Let's discuss how I can help bring your ideas to life with
-              cutting-edge web development solutions.
+              Let's discuss backend architecture, API development, or
+              microservices projects you're working on.
             </p>
             <motion.a
-              href="mailto:manushprajwal555@gmail.com"
+              href="/MP_Resume.pdf"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-xl shadow-lg hover:bg-zinc-200 transition-all duration-300"
             >
               <Mail size={20} />
-              Start a Conversation
+              View Resume / Contact
             </motion.a>
           </div>
         </motion.div>

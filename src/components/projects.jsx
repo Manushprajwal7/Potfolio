@@ -29,12 +29,12 @@ export function Projects() {
     {
       title: "Student Hub",
       description:
-        "A comprehensive college community platform where students can raise issues, share resources, announce events, share scholarships, and list jobs. Features real-time notifications and a robust user management system.",
+        "Designed and implemented a microservice-based backend architecture using NestJS. Services were split by domain (jobs, issues, announcements, resources) and communicated via REST and event-driven patterns. The system supports 1,300+ daily users.",
       image: "/studenthub.png",
       category: "web",
       github: "https://github.com/Manushprajwal7/student-hub-V2",
       live: "https://student-hub-mp.vercel.app/",
-      tools: ["Next.js", "Firebase", "Tailwind CSS", "TypeScript"],
+      tools: ["NestJS", "Node.js", "PostgreSQL", "Kafka"],
       featured: true,
       stats: {
         stars: 15,
@@ -42,10 +42,10 @@ export function Projects() {
         contributors: 3,
       },
       highlights: [
-        "Real-time notifications",
-        "User authentication",
-        "File sharing",
-        "Event management",
+        "Microservice architecture",
+        "Domain-driven design",
+        "Event-driven communication",
+        "Scalable backend systems",
       ],
     },
     {
@@ -161,10 +161,7 @@ export function Projects() {
   ];
 
   return (
-    <section
-      id="projects"
-      className="py-20 bg-black relative overflow-hidden"
-    >
+    <section id="projects" className="py-20 bg-black relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-72 h-72 bg-white/5 rounded-full blur-3xl" />

@@ -137,23 +137,13 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mb-6"
-            >
-              <motion.span
-                className="inline-block px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-white text-sm font-medium mb-4"
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)",
-                }}
-              >
-                👋 Welcome to my portfolio
-              </motion.span>
-            </motion.div>
+            ></motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight"
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-2 text-white leading-tight"
             >
               Hi, I'm{" "}
               <motion.span
@@ -172,16 +162,32 @@ export function Hero() {
             </motion.h1>
 
             <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-2xl md:text-3xl text-blue-400 mb-4 font-semibold"
+            >
+              Backend Engineer
+            </motion.p>
+
+            <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
+              className="text-md md:text-lg text-gray-400 mb-8 leading-relaxed"
+            >
+              Node.js • NestJS • Microservices • Kafka • PostgreSQL • Docker
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
               className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed"
             >
-              A passionate{" "}
-              <span className="text-white font-semibold underline decoration-zinc-500 underline-offset-4">
-                Full-Stack Developer
-              </span>{" "}
-              crafting exceptional digital experiences with modern technologies.
+              I design and build scalable backend systems, APIs, and distributed
+              microservices with a focus on performance, reliability, and clean
+              architecture.
             </motion.p>
 
             <motion.div

@@ -33,17 +33,17 @@ export function Resume() {
 
   const experience = [
     {
-      position: "Freelance Full-Stack Developer",
+      position: "Backend Engineer",
       company: "Self-Employed",
       year: "2022 - Present",
       location: "Remote",
       description:
-        "Developed and maintained web applications using React, Next.js, and modern web technologies. Collaborated with clients to deliver high-quality, scalable solutions.",
+        "Designed and built scalable backend systems, APIs, and microservices using Node.js, NestJS, and containerized deployments. Implemented event-driven architectures with Kafka and database-driven solutions with PostgreSQL and MongoDB.",
       achievements: [
-        "Built 15+ web applications",
-        "Achieved 100% client satisfaction",
-        "Specialized in React and Next.js",
-        "Implemented responsive design principles",
+        "Architected 5+ backend services with NestJS",
+        "Implemented Kafka-based event pipelines",
+        "Optimized database performance with PostgreSQL",
+        "Deployed containerized services with Docker",
       ],
     },
     {
@@ -120,10 +120,7 @@ export function Resume() {
   };
 
   return (
-    <section
-      id="resume"
-      className="py-20 bg-black relative overflow-hidden"
-    >
+    <section id="resume" className="py-20 bg-black relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
@@ -196,56 +193,8 @@ export function Resume() {
                 </h3>
               </div>
 
-              {/* Education */}
-              <div className="mb-8">
-                <h4 className="text-lg font-semibold text-gray-300 mb-4 flex items-center gap-2">
-                  <BookOpen size={20} className="text-zinc-400" />
-                  Education
-                </h4>
-                {education.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="border-l-4 border-zinc-500 pl-6 mb-6"
-                  >
-                    <div className="flex items-start justify-between mb-2">
-                      <h5 className="font-bold text-white text-lg">
-                        {item.degree}
-                      </h5>
-                      <span className="text-sm text-gray-400 bg-white/10 px-3 py-1 rounded-full">
-                        {item.year}
-                      </span>
-                    </div>
-                    <p className="text-zinc-400 font-medium mb-2">
-                      {item.institution}
-                    </p>
-                    <div className="flex items-center gap-2 text-sm text-gray-400 mb-3">
-                      <MapPin size={14} />
-                      {item.location}
-                    </div>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                      {item.description}
-                    </p>
-                    <ul className="space-y-1">
-                      {item.achievements.map((achievement, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-center gap-2 text-sm text-gray-400"
-                        >
-                          <div className="w-1.5 h-1.5 bg-zinc-500 rounded-full" />
-                          {achievement}
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                ))}
-              </div>
-
               {/* Experience */}
-              <div>
+              <div className="mb-8">
                 <h4 className="text-lg font-semibold text-gray-300 mb-4 flex items-center gap-2">
                   <Briefcase size={20} className="text-gray-500" />
                   Work Experience
@@ -284,6 +233,54 @@ export function Resume() {
                           className="flex items-center gap-2 text-sm text-gray-400"
                         >
                           <div className="w-1.5 h-1.5 bg-gray-500 rounded-full" />
+                          {achievement}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Education */}
+              <div>
+                <h4 className="text-lg font-semibold text-gray-300 mb-4 flex items-center gap-2">
+                  <BookOpen size={20} className="text-zinc-400" />
+                  Education
+                </h4>
+                {education.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="border-l-4 border-zinc-500 pl-6 mb-6"
+                  >
+                    <div className="flex items-start justify-between mb-2">
+                      <h5 className="font-bold text-white text-lg">
+                        {item.degree}
+                      </h5>
+                      <span className="text-sm text-gray-400 bg-white/10 px-3 py-1 rounded-full">
+                        {item.year}
+                      </span>
+                    </div>
+                    <p className="text-zinc-400 font-medium mb-2">
+                      {item.institution}
+                    </p>
+                    <div className="flex items-center gap-2 text-sm text-gray-400 mb-3">
+                      <MapPin size={14} />
+                      {item.location}
+                    </div>
+                    <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                      {item.description}
+                    </p>
+                    <ul className="space-y-1">
+                      {item.achievements.map((achievement, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-center gap-2 text-sm text-gray-400"
+                        >
+                          <div className="w-1.5 h-1.5 bg-zinc-500 rounded-full" />
                           {achievement}
                         </li>
                       ))}
