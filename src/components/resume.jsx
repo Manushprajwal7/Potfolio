@@ -72,9 +72,9 @@ export function Resume() {
     },
     {
       title: "Hackathon Winner",
-      year: "2023",
+      year: "2025",
       description:
-        "First place in college-level hackathon for innovative web solution",
+        "Runner up in Google Gen AI Exchange hackathon for innovative use of AI",
       category: "Competition",
       icon: Trophy,
     },

@@ -49,14 +49,19 @@ export function Projects() {
       ],
     },
     {
-      title: "Accessible Travel Destinations",
+      title: "Cement Mind AI ",
       description:
-        "An inclusive travel platform designed specifically for people with disabilities to check destination accessibility. Features detailed accessibility ratings, user reviews, and comprehensive accessibility information.",
-      image: "/accesstravel.png",
+        "AI Operating Workbench For Raw Material and Logistics Automation with Autonomous Real-Time Cement Quality Detection and Correction System",
+      image: "/cementmind.png",
       category: "web",
-      github: "https://github.com/Manushprajwal7/travel-guide",
-      live: "https://accessdestinations.netlify.app",
-      tools: ["React", "Express.js", "MongoDB", "Node.js"],
+      github: "https://github.com/Manushprajwal7/cementmindAI",
+      live: "https://cementmindai.vercel.app/",
+      tools: [
+        "React",
+        "Event-driven communication",
+        "Apache Kafka",
+        "Machine Learning",
+      ],
       featured: true,
       stats: {
         stars: 12,
@@ -71,13 +76,13 @@ export function Projects() {
       ],
     },
     {
-      title: "Trip Expenses Tracker",
+      title: "Tour India ",
       description:
-        "A smart expense management application for students to efficiently track, manage, and share trip expenses. Features group expense splitting, real-time calculations, and detailed expense reports.",
-      image: "/tripexpenses.png",
+        "A comprehensive travel platform for Indian tourists, offering detailed destination information, accessibility ratings, user reviews, and interactive maps. Features mobile-responsive design and seamless navigation.",
+      image: "/tourindia.png",
       category: "web",
-      github: "https://github.com/Manushprajwal7/V2-trip-expenses-tracker",
-      live: "https://trip-expens-tracker.vercel.app/",
+      github: "https://github.com/Manushprajwal7/tour-india",
+      live: "https://www.tourindia24.com/",
       tools: ["React", "Node.js", "PostgreSQL", "Express.js"],
       featured: false,
       stats: {
@@ -86,10 +91,39 @@ export function Projects() {
         contributors: 1,
       },
       highlights: [
-        "Expense splitting",
-        "Real-time calculations",
-        "Group management",
-        "Export reports",
+        "Detailed destination information",
+        "Accessibility ratings",
+        "User reviews",
+        "Interactive maps",
+        "Mobile-responsive design",
+      ],
+    },
+    {
+      title: "Secure Net",
+      description:
+        "A comprehensive Intrusion Detection System with real-time network monitoring, threat analysis, and an advanced web dashboard for cybersecurity professional",
+      image: "/securenet.png",
+      category: "web",
+      github:
+        "https://github.com/Manushprajwal7/Secure-Net-?tab=readme-ov-file",
+      live: "#",
+      tools: [
+        "PyShark",
+        "Machine Learning",
+        "Real-time Analytics",
+        "Web Dashboard",
+      ],
+      featured: false,
+      stats: {
+        stars: 5,
+        views: 300,
+        contributors: 1,
+      },
+      highlights: [
+        "Job listings",
+        "Issue reporting",
+        "Community forums",
+        "Expert matching",
       ],
     },
     {
@@ -134,28 +168,6 @@ export function Projects() {
         "Analytics dashboard",
         "Real-time updates",
         "Institutional tracking",
-      ],
-    },
-    {
-      title: "Bike Brains",
-      description:
-        "A comprehensive SaaS platform connecting bike and car enthusiasts with job opportunities and technical support. Features job listings, issue reporting, and community forums.",
-      image: "/bb_card.jpg",
-      category: "web",
-      github: "https://github.com/Manushprajwal7/BikeBrains",
-      live: "#",
-      tools: ["React", "Express.js", "PostgreSQL", "Redis"],
-      featured: false,
-      stats: {
-        stars: 5,
-        views: 300,
-        contributors: 1,
-      },
-      highlights: [
-        "Job listings",
-        "Issue reporting",
-        "Community forums",
-        "Expert matching",
       ],
     },
   ];
