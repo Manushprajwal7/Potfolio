@@ -11,6 +11,7 @@ import {
   ChevronDown,
   ArrowRight,
 } from "lucide-react";
+import { BackgroundPaths } from "@/components/ui/background-paths";
 
 // Hero Component
 export function Hero() {
@@ -56,49 +57,8 @@ export function Hero() {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black"
     >
-      {/* Enhanced Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute -top-40 -right-40 w-96 h-96 bg-zinc-500/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.3, 1],
-            rotate: [0, 180, 360],
-            x: [0, mousePosition.x * 20, 0],
-            y: [0, mousePosition.y * 20, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className="absolute -bottom-40 -left-40 w-96 h-96 bg-zinc-600/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1.3, 1, 1.3],
-            rotate: [360, 180, 0],
-            x: [0, -mousePosition.x * 20, 0],
-            y: [0, -mousePosition.y * 20, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/2 w-64 h-64 bg-zinc-800/10 rounded-full blur-2xl"
-          animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.3, 0.6, 0.3],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-      </div>
+      {/* Background Paths Animation - Full Background */}
+      <BackgroundPaths />
 
       {/* Floating Particles */}
       <div className="absolute inset-0">
