@@ -6,6 +6,7 @@ import { About } from "@/components/about";
 import { Projects } from "@/components/projects";
 import { Contact } from "@/components/contact";
 import { Resume } from "@/components/resume";
+import { Achievements } from "@/components/achievements";
 
 const App = () => {
       
@@ -28,6 +29,7 @@ const App = () => {
     <div className="min-h-screen bg-black">
       <Hero />
       <About />
+      <Achievements />
       <Projects />
       <Resume />
       <Contact />

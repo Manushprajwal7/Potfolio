@@ -2,97 +2,75 @@
 
 import { motion } from "framer-motion";
 import {
-  Smartphone,
   Code,
   Zap,
-  Database,
-  Palette,
-  Users,
   Target,
+  Users,
   Lightbulb,
   TrendingUp,
-  Heart,
+  FileText,
+  ExternalLink,
+  Trophy,
 } from "lucide-react";
 
 export function About() {
   const skills = [
     {
       name: "Node.js",
-      level: 85,
+      level: 90,
       icon: <Zap size={20} />,
       color: "from-zinc-600 to-black",
       description: "Backend development",
     },
     {
       name: "NestJS",
-      level: 80,
+      level: 85,
       icon: <Code size={20} />,
       color: "from-red-500 to-red-700",
       description: "Microservices framework",
     },
     {
-      name: "Kafka",
-      level: 75,
-      icon: <Database size={20} />,
-      color: "from-purple-500 to-purple-700",
-      description: "Event streaming",
-    },
-    {
       name: "PostgreSQL",
-      level: 80,
-      icon: <Database size={20} />,
-      color: "from-blue-500 to-blue-700",
-      description: "Relational database",
-    },
-    {
-      name: "MongoDB",
-      level: 75,
-      icon: <Database size={20} />,
-      color: "from-green-600 to-green-800",
-      description: "Document database",
-    },
-    {
-      name: "REST APIs",
       level: 85,
-      icon: <Code size={20} />,
+      icon: <Target size={20} />,
       color: "from-indigo-500 to-indigo-700",
-      description: "API development",
+      description: "Relational databases",
     },
     {
       name: "Microservices",
-      level: 78,
+      level: 82,
       icon: <Target size={20} />,
       color: "from-teal-500 to-teal-700",
       description: "Service architecture",
     },
     {
-      name: "Docker",
-      level: 75,
+      name: "Docker & AWS",
+      level: 78,
       icon: <Zap size={20} />,
       color: "from-cyan-500 to-cyan-700",
-      description: "Containerization",
+      description: "Containers & cloud",
     },
     {
-      name: "React",
-      level: 70,
-      icon: <Smartphone size={20} />,
+      name: "RAG / AI Systems",
+      level: 75,
+      icon: <Lightbulb size={20} />,
       color: "from-zinc-400 to-zinc-600",
-      description: "Frontend library",
+      description: "Retrieval pipelines",
     },
     {
-      name: "Next.js",
+      name: "Next.js / React",
       level: 72,
       icon: <Code size={20} />,
       color: "from-gray-700 to-gray-900",
-      description: "Frontend framework",
+      description: "Frontend frameworks",
     },
   ];
 
   const stats = [
+    { icon: FileText, value: "13", label: "Research Papers Published" },
+    { icon: Trophy, value: "3rd", label: "Runner-up · Gen AI Exchange" },
+    { icon: TrendingUp, value: "5", label: "Freelance Projects Shipped" },
     { icon: Target, value: "1.3K+", label: "Daily Active Users Supported" },
-    { icon: TrendingUp, value: "5+", label: "Backend Services Deployed" },
-    { icon: Heart, value: "Kafka-Based", label: "Real-Time Pipelines" },
-    { icon: Lightbulb, value: "Production", label: "Systems in Use" },
   ];
 
   return (
@@ -111,64 +89,41 @@ export function About() {
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="inline-block mb-6"
-          >
+          <div className="inline-block mb-6">
             <div className="p-4 bg-zinc-800 rounded-2xl shadow-lg border border-zinc-700">
               <Users className="text-white" size={32} />
             </div>
-          </motion.div>
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold mb-6 text-white"
-          >
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             About Me
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
-          >
-            I am a backend engineer specializing in designing scalable APIs,
-            microservice architectures, and distributed systems. I focus on
-            building reliable backend platforms that handle real-world scale,
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            I am a backend engineer and published researcher specializing in
+            scalable APIs, microservice architectures, and distributed systems.
+            I build reliable backend platforms that handle real-world scale,
             concurrency, and data consistency.
-          </motion.p>
+          </p>
         </motion.div>
 
         {/* Stats Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
         >
-          {stats.map((stat, index) => (
-            <motion.div
+          {stats.map((stat) => (
+            <div
               key={stat.label}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="text-center p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg border border-white/20 hover:border-white/40 transition-all duration-300"
+              className="text-center p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg border border-white/20 hover:border-white/40 transition-colors duration-300"
             >
               <div className="inline-block p-3 bg-zinc-800 rounded-xl mb-4 border border-zinc-700">
                 <stat.icon className="text-white" size={24} />
@@ -177,22 +132,19 @@ export function About() {
                 {stat.value}
               </div>
               <div className="text-gray-300 text-sm">{stat.label}</div>
-            </motion.div>
+            </div>
           ))}
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <motion.div
-              whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl border border-white/20 hover:border-white/40 hover:shadow-2xl transition-all duration-300"
-            >
+            <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl border border-white/20 hover:border-white/40 transition-colors duration-300">
               <h3 className="text-2xl font-bold mb-6 text-white flex items-center gap-3">
                 <div className="p-2 bg-zinc-800 rounded-lg border border-zinc-700">
                   <Users className="text-white" size={24} />
@@ -200,22 +152,33 @@ export function About() {
                 My Journey
               </h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                I have experience building production backend systems using
-                Node.js and NestJS, implementing Kafka-based event pipelines,
-                containerized services with Docker, and database-driven
-                architectures with PostgreSQL and MongoDB.
+                I build production backend systems with Node.js, NestJS, and
+                containerized deployments, backed by PostgreSQL and event-driven
+                pipelines. Alongside engineering, I am the author of 13 research
+                papers — 9 IEEE conference papers and 4 journal papers — across
+                machine learning systems, biosensor technology, distributed
+                systems, and secure computing architectures.
               </p>
-              <p className="text-gray-300 leading-relaxed">
-                My interests include backend system design, event-driven
-                architectures, performance optimization, and building
-                fault-tolerant services.
+              <p className="text-gray-300 leading-relaxed mb-6">
+                I was recognized as 3rd runner-up at the Google Cloud Gen AI
+                Exchange Hackathon 2025 — a national-scale event that engaged
+                278K+ developers, reached 750K+ innovators, and received 4,457
+                prototype submissions. I have also successfully shipped 5
+                freelance software projects.
               </p>
-            </motion.div>
+              <a
+                href="https://ieeexplore.ieee.org/author/576786069332685"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-white text-black font-semibold rounded-lg hover:bg-zinc-200 transition-colors"
+              >
+                <FileText size={16} />
+                IEEE Xplore Author Profile
+                <ExternalLink size={14} />
+              </a>
+            </div>
 
-            <motion.div
-              whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-lg"
-            >
+            <div className="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-lg">
               <h3 className="text-2xl font-bold mb-4 text-white">What I Do</h3>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-center gap-3">
@@ -236,19 +199,19 @@ export function About() {
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-blue-400 rounded-full" />
-                  Authentication & Authorization Systems
+                  RAG & AI Retrieval Pipelines
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-purple-400 rounded-full" />
-                  Dockerized Backend Deployments
+                  Dockerized & Cloud Deployments (AWS)
                 </li>
               </ul>
-            </motion.div>
+            </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
             className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl border border-white/20"
@@ -261,24 +224,14 @@ export function About() {
             </h3>
             <div className="space-y-6">
               {skills.map((skill, index) => (
-                <motion.div
-                  key={skill.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02 }}
-                  className="space-y-3 group"
-                >
+                <div key={skill.name} className="space-y-3 group">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-3">
-                      <motion.div
-                        whileHover={{ rotate: 360 }}
-                        transition={{ duration: 0.5 }}
+                      <div
                         className={`p-2 rounded-lg bg-gradient-to-r ${skill.color} shadow-lg`}
                       >
                         <div className="text-white">{skill.icon}</div>
-                      </motion.div>
+                      </div>
                       <div>
                         <span className="font-semibold text-white">
                           {skill.name}
@@ -298,41 +251,26 @@ export function About() {
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
                       transition={{
-                        duration: 1.5,
+                        duration: 1.2,
                         delay: index * 0.1,
                         ease: "easeOut",
                       }}
                       viewport={{ once: true }}
                     />
-                    <motion.div
-                      className="absolute inset-0 bg-white/20 rounded-full"
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      transition={{
-                        duration: 2,
-                        delay: index * 0.1 + 0.5,
-                      }}
-                      viewport={{ once: true }}
-                    />
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* Additional Info */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              viewport={{ once: true }}
-              className="mt-8 p-6 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm"
-            >
+            <div className="mt-8 p-6 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
               <h4 className="font-semibold text-white mb-3">Always Learning</h4>
               <p className="text-sm text-gray-300">
-                I'm constantly exploring new technologies and frameworks to stay
-                ahead of the curve and deliver cutting-edge solutions.
+                I'm constantly exploring new technologies and frameworks — from
+                AI retrieval systems to multi-tenant cloud architectures — to
+                deliver reliable, high-impact solutions.
               </p>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
