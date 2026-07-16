@@ -19,6 +19,16 @@ import { papers } from "@/lib/papers";
 export default function AchievementsPage() {
   const achievements = [
     {
+      image: "/achivements/oxford-certificate.jpeg",
+      title: "Oxford Certificate",
+      organization: "University of Oxford",
+      description:
+        "Earned prestigious certification from the University of Oxford, demonstrating expertise and academic excellence in specialized coursework.",
+      tag: "Certificate",
+      category: "Certification",
+      date: "2026",
+    },
+    {
       image: "/achivements/achievement-4.jpg",
       title: "On Stage — Gen AI Exchange Hackathon",
       organization: "Google Cloud × Hack2skill",

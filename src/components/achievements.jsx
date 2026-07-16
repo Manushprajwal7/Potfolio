@@ -18,11 +18,19 @@ import { papers } from "@/lib/papers";
 export function Achievements() {
   const achievements = [
     {
+      image: "/achivements/oxford-certificate.jpeg",
+      title: "Oxford Certificate",
+      organization: "University of Oxford",
+      description:
+        "Earned prestigious certification from the University of Oxford, demonstrating expertise and academic excellence in specialized coursework.",
+      tag: "Certificate",
+    },
+    {
       image: "/achivements/achievement-4.jpg",
       title: "On Stage — Gen AI Exchange Hackathon",
       organization: "Google Cloud × Hack2skill",
       description:
-        "Receiving the ₹50,000 prize on stage as a winning team at the Google Cloud Gen AI Exchange Hackathon. With 278K+ developers joined, 750K+ innovators reached, and 4,457 prototypes submitted, it was an honour to have our solution chosen as a winner.",
+        'Receiving the ₹50,000 prize on stage as a winning team at the Google Cloud Gen AI Exchange Hackathon. With 278K+ developers joined, 750K+ innovators reached, and 4,457 prototypes submitted, it was an honour to have our solution chosen as a winner.',
       tag: "₹50,000 Prize",
     },
     {
