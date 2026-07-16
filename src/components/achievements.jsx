@@ -18,14 +18,6 @@ import { papers } from "@/lib/papers";
 export function Achievements() {
   const achievements = [
     {
-      image: "/achivements/oxford-certificate.jpeg",
-      title: "Oxford Certificate",
-      organization: "University of Oxford",
-      description:
-        "Earned prestigious certification from the University of Oxford, demonstrating expertise and academic excellence in specialized coursework.",
-      tag: "Certificate",
-    },
-    {
       image: "/achivements/achievement-4.jpg",
       title: "On Stage — Gen AI Exchange Hackathon",
       organization: "Google Cloud × Hack2skill",
@@ -64,6 +56,14 @@ export function Achievements() {
       description:
         "Recognized as 3rd Runner-up for the problem statement “Optimizing Cement Operations with Generative AI”, demonstrating innovation and technical mastery with Google Cloud AI technologies.",
       tag: "Top 4",
+    },
+    {
+      image: "/achivements/oxford-certificate.jpeg",
+      title: "Oxford Certificate",
+      organization: "University of Oxford",
+      description:
+        "This certificate was won for a Blockchain Hackathon among 232 students. Earned prestigious certification from the University of Oxford, demonstrating expertise and academic excellence in specialized coursework.",
+      tag: "Certificate",
     },
   ];
 

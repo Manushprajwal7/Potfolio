@@ -11,23 +11,14 @@ import {
   FileText,
   ArrowRight,
   Medal,
+  Download,
+  ExternalLink,
 } from "lucide-react";
-import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { papers } from "@/lib/papers";
 
 export default function AchievementsPage() {
   const achievements = [
-    {
-      image: "/achivements/oxford-certificate.jpeg",
-      title: "Oxford Certificate",
-      organization: "University of Oxford",
-      description:
-        "Earned prestigious certification from the University of Oxford, demonstrating expertise and academic excellence in specialized coursework.",
-      tag: "Certificate",
-      category: "Certification",
-      date: "2026",
-    },
     {
       image: "/achivements/achievement-4.jpg",
       title: "On Stage — Gen AI Exchange Hackathon",
@@ -77,6 +68,16 @@ export default function AchievementsPage() {
       tag: "Top 4",
       category: "Hackathon",
       date: "2025",
+    },
+    {
+      image: "/achivements/oxford-certificate.jpeg",
+      title: "Oxford Certificate",
+      organization: "University of Oxford",
+      description:
+        "This certificate was won for a Blockchain Hackathon among 232 students. Earned prestigious certification from the University of Oxford, demonstrating expertise and academic excellence in specialized coursework.",
+      tag: "Certificate",
+      category: "Certification",
+      date: "2026",
     },
   ];
 
@@ -232,91 +233,6 @@ export default function AchievementsPage() {
                 </motion.div>
               ))}
             </AnimatePresence>
-
-            {/* Research Papers Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="relative group h-full"
-            >
-              <div className="bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/10 hover:border-white/40 transition-all duration-300 hover:shadow-2xl hover:shadow-white/10 h-full flex flex-col p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 bg-zinc-800 rounded-xl border border-zinc-700">
-                    <FileText className="text-white" size={24} />
-                  </div>
-                  <span className="px-3 py-1 bg-gradient-to-r from-blue-400 to-cyan-500 text-white text-xs font-bold rounded-full">
-                    13 Papers
-                  </span>
-                </div>
-
-                <h3 className="text-lg font-bold text-white mb-2">
-                  Research Papers
-                </h3>
-
-                {(() => {
-                  const featured = papers.find((p) => p.featured) || papers[0];
-                  return (
-                    <Link
-                      href={featured.file}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block bg-white/5 rounded-xl border border-white/10 hover:border-white/30 transition-colors mb-4 overflow-hidden"
-                    >
-                      <div className="relative h-44 bg-zinc-900 overflow-hidden">
-                        <object
-                          data={`${featured.file}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
-                          type="application/pdf"
-                          className="pointer-events-none absolute -top-8 left-0 w-full h-[160%]"
-                          aria-label={featured.title}
-                        >
-                          <div className="flex h-full items-center justify-center text-zinc-500">
-                            <FileText size={32} />
-                          </div>
-                        </object>
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                      </div>
-                      <div className="p-4">
-                        <span className="text-xs text-zinc-400 font-medium">
-                          {featured.venue}
-                        </span>
-                        <p className="text-sm text-white font-semibold mt-1 leading-snug line-clamp-3">
-                          {featured.title}
-                        </p>
-                      </div>
-                    </Link>
-                  );
-                })()}
-
-                <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                  Author of 13 research papers — 9 IEEE conference papers and 4
-                  journal papers — across machine learning, photonic biosensors,
-                  distributed systems, and secure computing.
-                </p>
-
-                <div className="mt-auto flex flex-col gap-3">
-                  <Link
-                    href="/papers"
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white text-black font-semibold rounded-lg hover:bg-zinc-200 transition-colors group/btn"
-                  >
-                    View All Papers
-                    <ArrowRight
-                      size={16}
-                      className="group-hover/btn:translate-x-1 transition-transform"
-                    />
-                  </Link>
-                  <a
-                    href="https://ieeexplore.ieee.org/author/576786069332685"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 hover:border-white/40 transition-colors"
-                  >
-                    IEEE Xplore Profile
-                    <ExternalLink size={14} />
-                  </a>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Empty State */}
@@ -346,7 +262,7 @@ export default function AchievementsPage() {
             className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {[
-              { number: "5", label: "Hackathons & Tech Fests" },
+              { number: "6", label: "Hackathons & Tech Fests" },
               { number: "13", label: "Research Papers" },
               { number: "9", label: "IEEE Conference Papers" },
               { number: "₹50K+", label: "Prize Money Won" },
@@ -366,6 +282,128 @@ export default function AchievementsPage() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Research Papers Section */}
+      <section className="py-20 border-t border-white/10 relative">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-block mb-6">
+              <div className="p-4 bg-zinc-800 rounded-2xl shadow-lg border border-zinc-700">
+                <FileText className="text-white" size={40} />
+              </div>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Research Papers
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Author of 13 research papers — 9 IEEE conference papers and 4
+              journal papers — across machine learning, photonic biosensors,
+              distributed systems, and secure computing.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+            {papers.map((paper, index) => (
+              <motion.div
+                key={paper.title}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                viewport={{ once: true }}
+                className="group bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 hover:border-white/40 transition-all duration-500 hover:shadow-2xl hover:shadow-white/10 flex flex-col overflow-hidden h-full"
+              >
+                {/* PDF Preview */}
+                <Link
+                  href={paper.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block h-48 bg-zinc-900 overflow-hidden border-b border-white/10"
+                >
+                  <object
+                    data={`${paper.file}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+                    type="application/pdf"
+                    className="pointer-events-none absolute -top-10 left-0 w-full h-[170%]"
+                    aria-label={paper.title}
+                  >
+                    <div className="flex h-full items-center justify-center text-zinc-500">
+                      <FileText size={40} />
+                    </div>
+                  </object>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                </Link>
+
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="p-2 bg-zinc-800 rounded-lg border border-zinc-700">
+                      <FileText className="text-white" size={18} />
+                    </div>
+                    <span className="px-3 py-1 bg-white/10 text-zinc-300 text-xs font-medium rounded-full border border-white/20">
+                      {paper.venue}
+                    </span>
+                  </div>
+
+                  <h3 className="text-base font-bold text-white mb-3 leading-snug group-hover:text-zinc-300 transition-colors line-clamp-3">
+                    {paper.title}
+                  </h3>
+
+                  <p className="text-gray-300 text-sm leading-relaxed mb-4 flex-1">
+                    {paper.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {paper.topics.map((topic) => (
+                      <span
+                        key={topic}
+                        className="px-2.5 py-1 bg-white/10 text-gray-300 text-xs rounded-full border border-white/20"
+                      >
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-3 mt-auto">
+                    <Link
+                      href={paper.file}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-lg transition-colors hover:bg-zinc-200 flex-1 justify-center text-sm font-semibold"
+                    >
+                      <ExternalLink size={16} />
+                      Read
+                    </Link>
+                    <a
+                      href={paper.file}
+                      download
+                      className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors border border-white/20 hover:border-white/40 justify-center text-sm font-semibold"
+                      aria-label="Download paper"
+                    >
+                      <Download size={16} />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <a
+              href="https://ieeexplore.ieee.org/author/576786069332685"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 hover:border-white/40 transition-colors"
+            >
+              View IEEE Xplore Profile
+              <ExternalLink size={16} />
+            </a>
+          </div>
         </div>
       </section>
 
