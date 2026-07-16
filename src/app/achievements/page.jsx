@@ -251,40 +251,6 @@ export default function AchievementsPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 border-t border-white/10 relative">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {[
-              { number: "6", label: "Hackathons & Tech Fests" },
-              { number: "13", label: "Research Papers" },
-              { number: "9", label: "IEEE Conference Papers" },
-              { number: "₹50K+", label: "Prize Money Won" },
-            ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-white/30 transition-colors text-center"
-              >
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-                  {stat.number}
-                </div>
-                <p className="text-zinc-400 text-sm">{stat.label}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
       {/* Research Papers Section */}
       <section className="py-20 border-t border-white/10 relative">
         <div className="container mx-auto px-6">
@@ -311,13 +277,9 @@ export default function AchievementsPage() {
           </motion.div>
 
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-            {papers.map((paper, index) => (
-              <motion.div
+            {papers.map((paper) => (
+              <div
                 key={paper.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                viewport={{ once: true }}
                 className="group bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 hover:border-white/40 transition-all duration-500 hover:shadow-2xl hover:shadow-white/10 flex flex-col overflow-hidden h-full"
               >
                 {/* PDF Preview */}
@@ -389,7 +351,7 @@ export default function AchievementsPage() {
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
