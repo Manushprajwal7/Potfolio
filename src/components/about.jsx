@@ -1,258 +1,168 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Code,
-  Zap,
-  Target,
-  Users,
-  Lightbulb,
-  TrendingUp,
-  FileText,
-  ExternalLink,
-  Trophy,
-} from "lucide-react";
+import { ExternalLink } from "lucide-react";
+
+const skills = [
+  { name: "Node.js / NestJS", level: 90, note: "backend & REST APIs" },
+  { name: "AWS", level: 85, note: "EC2, RDS, S3, Lambda, CloudWatch" },
+  { name: "PostgreSQL", level: 85, note: "relational databases" },
+  { name: "Docker & Terraform", level: 80, note: "infra as code" },
+  { name: "LangChain / LangGraph", level: 75, note: "agentic AI systems" },
+  { name: "Python & TypeScript", level: 85, note: "core languages" },
+];
+
+const stats = [
+  { value: "11", label: "research publications" },
+  { value: "4x", label: "hackathon winner" },
+  { value: "₹104K", label: "atlas bill revenue in 47 days" },
+  { value: "26+", label: "stores on atlas bill" },
+];
+
+const doing = [
+  "Backend API design & development (Node.js, NestJS)",
+  "Cloud infrastructure & DevOps (AWS, Terraform, Docker)",
+  "Agentic AI systems (LangChain, LangGraph, n8n)",
+  "Database design & optimization (PostgreSQL, Supabase, MongoDB)",
+  "Multi-tenant SaaS & ERP architecture",
+  "Infrastructure cost & FinOps automation",
+];
 
 export function About() {
-  const skills = [
-    {
-      name: "Node.js",
-      level: 90,
-      icon: <Zap size={20} />,
-      color: "from-zinc-600 to-black",
-      description: "Backend development",
-    },
-    {
-      name: "NestJS",
-      level: 85,
-      icon: <Code size={20} />,
-      color: "from-red-500 to-red-700",
-      description: "Microservices framework",
-    },
-    {
-      name: "PostgreSQL",
-      level: 85,
-      icon: <Target size={20} />,
-      color: "from-indigo-500 to-indigo-700",
-      description: "Relational databases",
-    },
-    {
-      name: "Microservices",
-      level: 82,
-      icon: <Target size={20} />,
-      color: "from-teal-500 to-teal-700",
-      description: "Service architecture",
-    },
-    {
-      name: "Docker & AWS",
-      level: 78,
-      icon: <Zap size={20} />,
-      color: "from-cyan-500 to-cyan-700",
-      description: "Containers & cloud",
-    },
-    {
-      name: "RAG / AI Systems",
-      level: 75,
-      icon: <Lightbulb size={20} />,
-      color: "from-zinc-400 to-zinc-600",
-      description: "Retrieval pipelines",
-    },
-    {
-      name: "Next.js / React",
-      level: 72,
-      icon: <Code size={20} />,
-      color: "from-gray-700 to-gray-900",
-      description: "Frontend frameworks",
-    },
-  ];
-
-  const stats = [
-    { icon: FileText, value: "13", label: "Research Papers Published" },
-    { icon: Trophy, value: "3rd", label: "Runner-up · Gen AI Exchange" },
-    { icon: TrendingUp, value: "5", label: "Freelance Projects Shipped" },
-    { icon: Target, value: "1.3K+", label: "Daily Active Users Supported" },
-  ];
-
   return (
-    <section id="about" className="py-20 bg-black relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-72 h-72 bg-zinc-500/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-zinc-800/5 rounded-full blur-3xl" />
-      </div>
-
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(59,130,246,0.3)_1px,transparent_0)] bg-[length:20px_20px]" />
-      </div>
-
+    <section id="about" className="py-24 bg-[#0a0c0f] relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-14 max-w-2xl"
         >
-          <div className="inline-block mb-6">
-            <div className="p-4 bg-zinc-800 rounded-2xl shadow-lg border border-zinc-700">
-              <Users className="text-white" size={32} />
-            </div>
-          </div>
-
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            About Me
+          <p className="eyebrow mb-4">$ cat about.md</p>
+          <h2 className="font-mono text-3xl md:text-4xl font-semibold text-ink mb-5">
+            About
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            I am a backend engineer and published researcher specializing in
-            scalable APIs, microservice architectures, and distributed systems.
-            I build reliable backend platforms that handle real-world scale,
-            concurrency, and data consistency.
+          <p className="text-lg text-ink-dim leading-relaxed">
+            I'm a software engineer passionate about building scalable
+            backend systems, cloud infrastructure, and AI-powered
+            applications — currently Founding Engineer of Atlas Bill, a
+            multi-tenant retail ERP, and a published researcher.
           </p>
         </motion.div>
 
-        {/* Stats Section */}
+        {/* Stats readout */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+          className="grid grid-cols-2 md:grid-cols-4 panel divide-x divide-y md:divide-y-0 divide-line mb-16"
         >
           {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="text-center p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg border border-white/20 hover:border-white/40 transition-colors duration-300"
-            >
-              <div className="inline-block p-3 bg-zinc-800 rounded-xl mb-4 border border-zinc-700">
-                <stat.icon className="text-white" size={24} />
-              </div>
-              <div className="text-3xl font-bold text-white mb-2">
+            <div key={stat.label} className="p-6">
+              <div className="font-mono text-3xl font-semibold text-signal mb-2">
                 {stat.value}
               </div>
-              <div className="text-gray-300 text-sm">{stat.label}</div>
+              <div className="data-label normal-case tracking-normal text-ink-dim text-sm">
+                {stat.label}
+              </div>
             </div>
           ))}
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl border border-white/20 hover:border-white/40 transition-colors duration-300">
-              <h3 className="text-2xl font-bold mb-6 text-white flex items-center gap-3">
-                <div className="p-2 bg-zinc-800 rounded-lg border border-zinc-700">
-                  <Users className="text-white" size={24} />
-                </div>
-                My Journey
+            <div className="panel p-8">
+              <h3 className="font-mono text-xl font-semibold text-ink mb-5">
+                Journey
               </h3>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                I build production backend systems with Node.js, NestJS, and
-                containerized deployments, backed by PostgreSQL and event-driven
-                pipelines. Alongside engineering, I am the author of 13 research
-                papers — 9 IEEE conference papers and 4 journal papers — across
-                machine learning systems, biosensor technology, distributed
-                systems, and secure computing architectures.
+              <p className="text-ink-dim leading-relaxed mb-4">
+                As Founding Engineer of Atlas Bill, I built a multi-tenant
+                retail ERP that onboarded 26 supermarkets across Karnataka
+                and Tamil Nadu, generating ₹104K in revenue within 47 days
+                and processing over ₹600K in monthly transaction value.
+                Alongside engineering, I'm the author of 11 research papers
+                — 9 IEEE conference papers and 2 journal papers — across
+                machine learning, biosensor technology, distributed systems,
+                and secure computing architectures.
               </p>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                I was recognized as 3rd runner-up at the Google Cloud Gen AI
-                Exchange Hackathon 2025 — a national-scale event that engaged
-                278K+ developers, reached 750K+ innovators, and received 4,457
-                prototype submissions. I have also successfully shipped 5
-                freelance software projects.
+              <p className="text-ink-dim leading-relaxed mb-6">
+                I'm a 4x hackathon winner, most recently recognized as 3rd
+                runner-up at the Google Cloud Gen AI Exchange Hackathon 2025
+                — a national-scale event that engaged 278K+ developers,
+                reached 750K+ innovators, and received 4,457 prototype
+                submissions.
               </p>
               <a
                 href="https://ieeexplore.ieee.org/author/576786069332685"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 bg-white text-black font-semibold rounded-lg hover:bg-zinc-200 transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-signal text-[#0a0c0f] font-semibold rounded-md hover:bg-signal/90 transition-colors text-sm"
               >
-                <FileText size={16} />
-                IEEE Xplore Author Profile
+                IEEE Xplore author profile
                 <ExternalLink size={14} />
               </a>
             </div>
 
-            <div className="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-lg">
-              <h3 className="text-2xl font-bold mb-4 text-white">What I Do</h3>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-zinc-200 rounded-full" />
-                  Backend API Design & Development
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-zinc-400 rounded-full" />
-                  Microservices Architecture (NestJS)
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-zinc-600 rounded-full" />
-                  Event-Driven Systems (Kafka)
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-black border border-white/20 rounded-full" />
-                  Database Design & Optimization
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full" />
-                  RAG & AI Retrieval Pipelines
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-purple-400 rounded-full" />
-                  Dockerized & Cloud Deployments (AWS)
-                </li>
+            <div className="panel p-8">
+              <h3 className="font-mono text-xl font-semibold text-ink mb-5">
+                What I do
+              </h3>
+              <ul className="space-y-3">
+                {doing.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-3 text-ink-dim"
+                  >
+                    <span className="w-1.5 h-1.5 bg-signal rounded-full shrink-0" />
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl border border-white/20"
+            className="panel p-8"
           >
-            <h3 className="text-2xl font-bold mb-8 text-white flex items-center gap-3">
-              <div className="p-2 bg-zinc-800 rounded-lg border border-zinc-700">
-                <Target className="text-white" size={24} />
-              </div>
-              Technical Skills
+            <h3 className="font-mono text-xl font-semibold text-ink mb-8">
+              Technical skills
             </h3>
-            <div className="space-y-6">
+            <div className="space-y-5">
               {skills.map((skill, index) => (
-                <div key={skill.name} className="space-y-3 group">
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-3">
-                      <div
-                        className={`p-2 rounded-lg bg-gradient-to-r ${skill.color} shadow-lg`}
-                      >
-                        <div className="text-white">{skill.icon}</div>
-                      </div>
-                      <div>
-                        <span className="font-semibold text-white">
-                          {skill.name}
-                        </span>
-                        <p className="text-xs text-gray-400">
-                          {skill.description}
-                        </p>
-                      </div>
+                <div key={skill.name} className="space-y-2">
+                  <div className="flex justify-between items-baseline">
+                    <div>
+                      <span className="font-medium text-ink">
+                        {skill.name}
+                      </span>
+                      <span className="text-ink-faint text-xs ml-2">
+                        {skill.note}
+                      </span>
                     </div>
-                    <span className="text-sm font-medium text-gray-300">
+                    <span className="font-mono text-xs text-ink-dim">
                       {skill.level}%
                     </span>
                   </div>
-                  <div className="relative h-3 bg-white/10 rounded-full overflow-hidden">
+                  <div className="relative h-1.5 bg-line rounded-full overflow-hidden">
                     <motion.div
-                      className={`h-full bg-gradient-to-r ${skill.color} rounded-full shadow-lg`}
+                      className="h-full bg-signal rounded-full"
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
                       transition={{
-                        duration: 1.2,
-                        delay: index * 0.1,
+                        duration: 1,
+                        delay: index * 0.08,
                         ease: "easeOut",
                       }}
                       viewport={{ once: true }}
@@ -262,13 +172,14 @@ export function About() {
               ))}
             </div>
 
-            {/* Additional Info */}
-            <div className="mt-8 p-6 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
-              <h4 className="font-semibold text-white mb-3">Always Learning</h4>
-              <p className="text-sm text-gray-300">
-                I'm constantly exploring new technologies and frameworks — from
-                AI retrieval systems to multi-tenant cloud architectures — to
-                deliver reliable, high-impact solutions.
+            <div className="mt-8 p-5 bg-surface-raised rounded-md border border-line">
+              <h4 className="font-mono text-sm font-semibold text-ink mb-2">
+                Always learning
+              </h4>
+              <p className="text-sm text-ink-dim leading-relaxed">
+                Constantly exploring new territory — from AI retrieval
+                systems to multi-tenant cloud architectures — to ship
+                reliable, high-impact solutions.
               </p>
             </div>
           </motion.div>

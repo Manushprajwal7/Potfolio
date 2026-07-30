@@ -66,7 +66,7 @@ export async function POST(request) {
 
     const mailOptions = {
       from: process.env.SMTP_EMAIL,
-      to: "manushprajwal555@gmail.com", // Your email where you want to receive messages
+      to: "manushprajwal1@gmail.com", // Your email where you want to receive messages
       replyTo: email,
       subject: `Portfolio Contact: ${subject}`,
       html: `
@@ -100,7 +100,7 @@ export async function POST(request) {
 
     // Log successful submission
     console.log("=== EMAIL SENT SUCCESSFULLY ===");
-    console.log("To:", "manushprajwal555@gmail.com");
+    console.log("To:", "manushprajwal1@gmail.com");
     console.log("From:", email);
     console.log("Subject:", subject);
     console.log("Timestamp:", new Date().toISOString());

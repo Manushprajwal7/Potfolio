@@ -1,82 +1,72 @@
 "use client";
 import { motion } from "framer-motion";
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  Eye,
-  Code,
-  Smartphone,
-  ChevronDown,
-  ArrowRight,
-} from "lucide-react";
-import { BackgroundPaths } from "@/components/ui/background-paths";
+import { Github, Linkedin, Twitter, ArrowRight, FileDown } from "lucide-react";
+import { ConsoleField } from "@/components/ui/console-field";
 
-// Hero Component
+const socialLinks = [
+  { icon: Github, href: "https://github.com/Manushprajwal7", label: "GitHub" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/manush-prajwal-16a883294/",
+    label: "LinkedIn",
+  },
+  {
+    icon: Twitter,
+    href: "https://twitter.com/_manushprajwal",
+    label: "Twitter",
+  },
+];
+
+const readout = [
+  { key: "service", value: "manush-prajwal" },
+  { key: "role", value: "founding eng, atlas bill" },
+  { key: "stack", value: "node · nestjs · postgres · aws" },
+  { key: "hackathons", value: "4x winner" },
+  { key: "papers", value: "11 published" },
+];
+
 export function Hero() {
-  const socialLinks = [
-    {
-      icon: Github,
-      href: "https://github.com/Manushprajwal7",
-      label: "GitHub",
-    },
-    {
-      icon: Linkedin,
-      href: "https://www.linkedin.com/in/manush-prajwal-16a883294/",
-      label: "LinkedIn",
-    },
-    {
-      icon: Twitter,
-      href: "https://twitter.com/_manushprajwal",
-      label: "Twitter",
-    },
-  ];
-
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black"
+      className="min-h-screen flex items-center relative overflow-hidden bg-[#0a0c0f] pt-28 pb-16"
     >
-      {/* Background Paths Animation - Full Background */}
-      <BackgroundPaths />
+      <ConsoleField />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center lg:text-left"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-2 text-white leading-tight">
-              Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-white via-zinc-400 to-zinc-600 bg-clip-text text-transparent">
-                Manush Prajwal
+            <p className="eyebrow mb-6">$ whoami</p>
+
+            <h1 className="font-mono font-semibold text-4xl sm:text-5xl lg:text-6xl text-ink leading-[1.08] mb-6">
+              Manush Prajwal
+              <span className="block text-ink-dim mt-2">
+                builds backend systems
+                <br />
+                that hold under load.
               </span>
             </h1>
 
-            <p className="text-2xl md:text-3xl text-blue-400 mb-4 font-semibold">
-              Backend Engineer
+            <p className="text-lg text-ink-dim mb-10 leading-relaxed max-w-xl">
+              I build scalable backend systems, cloud infrastructure, and
+              AI-powered applications with Node.js, NestJS, PostgreSQL,
+              Docker, and AWS. Founding Engineer of Atlas Bill, a
+              multi-tenant retail ERP serving 26 stores. 4x hackathon winner
+              and author of 11 research publications.
             </p>
 
-            <p className="text-md md:text-lg text-gray-400 mb-8 leading-relaxed">
-              Node.js • NestJS • Microservices • Kafka • PostgreSQL • Docker
-            </p>
-
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-              I design and build scalable backend systems, APIs, and distributed
-              microservices with a focus on performance, reliability, and clean
-              architecture.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <a
                 href="#projects"
-                className="group px-8 py-4 bg-white text-black font-semibold rounded-xl shadow-lg hover:bg-zinc-200 transition-colors duration-300 flex items-center justify-center gap-2"
+                className="group px-6 py-3.5 bg-signal text-[#0a0c0f] font-semibold rounded-md hover:bg-signal/90 transition-colors duration-200 flex items-center justify-center gap-2"
               >
-                View My Work
+                See the work
                 <ArrowRight
-                  size={20}
+                  size={18}
                   className="group-hover:translate-x-1 transition-transform"
                 />
               </a>
@@ -84,15 +74,14 @@ export function Hero() {
                 href="/MP_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-xl backdrop-blur-sm hover:border-white/40 hover:bg-white/10 transition-colors duration-300 flex items-center justify-center gap-2"
+                className="px-6 py-3.5 border border-line text-ink font-semibold rounded-md hover:border-signal/50 hover:text-signal transition-colors duration-200 flex items-center justify-center gap-2"
               >
-                <Eye size={20} />
-                View My Resume
+                <FileDown size={18} />
+                Resume
               </a>
             </div>
 
-            {/* Social Links */}
-            <div className="flex justify-center lg:justify-start gap-4">
+            <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -100,51 +89,53 @@ export function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="p-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/20 hover:border-white/40 transition-colors duration-300"
+                  className="p-2.5 border border-line rounded-md text-ink-dim hover:text-signal hover:border-signal/40 transition-colors duration-200"
                 >
-                  <social.icon size={20} className="text-white" />
+                  <social.icon size={18} />
                 </a>
               ))}
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
           >
-            <div className="relative w-80 h-80 mx-auto">
-              {/* Static Glow Effect */}
-              <div className="absolute inset-0 bg-white rounded-full blur-2xl opacity-20" />
-              <div className="absolute inset-4 bg-zinc-800 rounded-full blur-2xl opacity-30" />
-
-              <div className="relative z-10 w-full h-full bg-gradient-to-br from-gray-900 to-gray-800 rounded-full p-2 shadow-2xl">
-                <img
-                  src="/achivements/achievement-4.jpg"
-                  alt="On Stage — Gen AI Exchange Hackathon"
-                  className="w-full h-full object-cover object-center rounded-full"
-                />
+            <div className="panel overflow-hidden shadow-2xl shadow-black/40">
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-line bg-surface-raised">
+                <span className="w-2.5 h-2.5 rounded-full bg-ink-faint/40" />
+                <span className="w-2.5 h-2.5 rounded-full bg-ink-faint/40" />
+                <span className="w-2.5 h-2.5 rounded-full bg-ink-faint/40" />
+                <span className="ml-3 data-label">status.sh</span>
               </div>
 
-              {/* Static Accent Badges */}
-              <div className="absolute -top-4 -right-4 p-3 bg-white text-black rounded-full shadow-lg border border-zinc-200">
-                <Code size={20} className="text-black" />
-              </div>
+              <div className="p-6 font-mono text-sm">
+                <div className="flex items-center gap-2 mb-5">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-signal opacity-60" />
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-signal" />
+                  </span>
+                  <span className="text-signal">operational</span>
+                  <span className="text-ink-faint ml-auto">open to work</span>
+                </div>
 
-              <div className="absolute -bottom-4 -left-4 p-3 bg-black text-white rounded-full shadow-lg border border-zinc-800">
-                <Smartphone size={20} className="text-white" />
+                <dl className="space-y-3">
+                  {readout.map((row) => (
+                    <div
+                      key={row.key}
+                      className="flex items-baseline justify-between gap-4 pb-3 border-b border-line/60 last:border-0 last:pb-0"
+                    >
+                      <dt className="text-ink-faint shrink-0">{row.key}</dt>
+                      <dd className="text-ink text-right truncate">
+                        {row.value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
             </div>
           </motion.div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <div className="flex flex-col items-center text-white/60">
-            <span className="text-sm mb-2">Scroll Down</span>
-            <ChevronDown size={20} />
-          </div>
         </div>
       </div>
     </section>

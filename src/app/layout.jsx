@@ -1,15 +1,27 @@
-import { Inter } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../components/theme-provider";
 import { Navigation } from "../components/navigation";
 import { Footer } from "../components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const plexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata = {
-  title: "Manush Prajwal - Full Stack Web Developer",
+  title: "Manush Prajwal — Backend Engineer",
   description:
-    "Portfolio of Manush Prajwal, a passionate Full Stack Web Developer specializing in React Native and Next.js",
+    "Portfolio of Manush Prajwal, a software engineer building scalable backend systems, cloud infrastructure, and AI-powered applications with Node.js, NestJS, PostgreSQL, Docker, and AWS.",
 };
 
 export default function RootLayout({ children }) {
@@ -32,7 +44,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${plexSans.variable} ${plexMono.variable} font-sans`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

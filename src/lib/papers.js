@@ -83,4 +83,12 @@ export const papers = [
     venue: "Research Paper",
     file: "/achivements/paper-proteinuria-orr-sers.pdf",
   },
+  {
+    title: "Diabetes Mellitus Diagnosis using Optical Ring Resonators",
+    description:
+      "A non-invasive optical ring resonator method for diagnosing diabetes mellitus by measuring resonance frequency shifts linked to glucose concentration in blood and urine, offering a precise alternative to invasive glucose testing.",
+    topics: ["Photonics", "Biosensors", "Diabetes", "Healthcare"],
+    venue: "IEEE · INDIACom-2024",
+    file: "/achivements/paper-diabetes-mellitus-orr.pdf",
+  },
 ];
